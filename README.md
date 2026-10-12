@@ -71,6 +71,7 @@ Los wireframes permiten hacer visibles las ideas de una interfaz y conversar sob
 
 - [`presentacion/index.html`](presentacion/index.html): exposición navegable con Reveal.js.
 - [`prototipos/cafeu-wireframes.html`](prototipos/cafeu-wireframes.html): lámina adaptable e imprimible con los cinco wireframes de baja fidelidad del ejemplo CaféU.
+- [`resultados/presentacion-cafeu.pdf`](resultados/presentacion-cafeu.pdf): versión PDF de la presentación.
 - [`docs/investigacion.md`](docs/investigacion.md): conceptos y procedimiento de la Fase 1.
 - [`docs/preguntas.md`](docs/preguntas.md): banco de 10 preguntas con respuestas y opciones para preparar la evaluación en Wayground.
 - [`docs/preguntas_wayground.csv`](docs/preguntas_wayground.csv): preguntas en formato tabular CSV para facilitar su carga o copia.

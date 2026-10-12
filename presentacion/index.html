@@ -38,6 +38,7 @@
     .diagram svg { display: block; height: auto; max-height: 450px; width: 100%; }
     .diagram-caption { color: #cad4e3; font-size: .47em !important; text-align: center; }
     .wireframes { align-items: stretch; display: grid; gap: .35em; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .wireframes-pair { display: grid; gap: .55em; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 auto; max-width: 760px; }
     .screen { background: var(--paper); border: 3px solid #9ba8bb; border-radius: 10px; color: var(--ink); grid-column: span 2; min-height: 0; padding: .28em; }
     .screen:nth-child(4), .screen:nth-child(5) { grid-column: span 3; }
     .screen-title { border-bottom: 2px solid #b4bfce; font-size: .38em; font-weight: 800; padding: .15em; text-align: center; }
@@ -51,8 +52,11 @@
     .refs { font-size: .43em !important; }
     .refs li { overflow-wrap: anywhere; }
     .reveal .progress { color: var(--mint); }
+    html.capture-mode .reveal .controls,
+    html.capture-mode .reveal .progress,
+    html.capture-mode .reveal .slide-number { display: none !important; }
     @media (max-width: 700px) {
-      .grid { grid-template-columns: 1fr; }
+      .grid, .wireframes-pair { grid-template-columns: 1fr; }
       .wireframes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .screen, .screen:nth-child(4), .screen:nth-child(5) { grid-column: span 1; }
     }
@@ -173,25 +177,34 @@
         <p class="eyebrow">Paso 3 · Navegación y componentes</p>
         <h2>¿Qué necesita cada pantalla?</h2>
         <div class="grid">
-          <div class="card"><h3>Inicio y Menú</h3><p>Acceso al menú, filtros de categoría y tarjetas con nombre, descripción, precio y acción para ver detalle.</p></div>
-          <div class="card"><h3>Detalle</h3><p>Descripción y precio del producto, selección de cantidad y acción “Agregar al pedido”.</p></div>
-          <div class="card"><h3>Mi pedido</h3><p>Resumen, cantidades, opciones para editar o quitar, subtotal y acción “Confirmar pedido”.</p></div>
-          <div class="card"><h3>Confirmación</h3><p>Estado de éxito, identificador/resumen del pedido y opción para volver al menú.</p></div>
+          <div class="card"><h3>Inicio y Menú</h3><p>Acceso al menú, categorías y tarjetas de productos con precio y detalle.</p></div>
+          <div class="card"><h3>Detalle</h3><p>Descripción, precio, cantidad y acción para agregar al pedido.</p></div>
+          <div class="card"><h3>Mi pedido</h3><p>Productos, cantidades, opción de quitar, subtotal y confirmación.</p></div>
+          <div class="card"><h3>Confirmación</h3><p>Estado de éxito, resumen del pedido y regreso al menú.</p></div>
         </div>
-        <div class="callout"><p>Un componente no es decoración: debe tener una función comprensible y apoyar una acción o una lectura.</p></div>
+        <div class="callout"><p>Cada componente debe apoyar una acción o una lectura comprensible.</p></div>
       </section>
 
       <section>
         <p class="eyebrow">Paso 4 · Wireframes de baja fidelidad</p>
-        <h2>Primero, el esqueleto de las pantallas</h2>
-        <div class="wireframes" aria-label="Wireframes estáticos de baja fidelidad de cinco pantallas de CaféU">
+        <h2>Inicio, menú y detalle de producto</h2>
+        <div class="wireframes" aria-label="Primeros tres wireframes estáticos de CaféU">
           <div class="screen"><div class="screen-title">1 · INICIO</div><p class="screen-copy">CaféU · Menú del día</p><div class="skeleton tall"></div><p class="screen-copy">Pedido rápido para tu descanso</p><div class="button">Ver menú</div><div class="button">Mi pedido</div></div>
           <div class="screen"><div class="screen-title">2 · MENÚ</div><p class="screen-copy">Buscar producto…</p><div class="skeleton short"></div><div class="product">Café americano · $1.50 <div class="button">Ver detalle</div></div><div class="product">Sanduche · $2.75 <div class="button">Ver detalle</div></div><div class="button">Mi pedido · 1</div></div>
           <div class="screen"><div class="screen-title">3 · DETALLE</div><div class="skeleton tall"></div><p class="screen-copy">Café americano · $1.50</p><div class="skeleton short"></div><p class="screen-copy">Cantidad: [−] 1 [+]</p><div class="button">Agregar al pedido</div></div>
+        </div>
+        <p class="diagram-caption">Bocetos estáticos: los controles representan acciones previstas.</p>
+      </section>
+
+      <section>
+        <p class="eyebrow">Paso 4 · Wireframes de baja fidelidad</p>
+        <h2>Revisión del pedido y confirmación</h2>
+        <div class="wireframes-pair" aria-label="Wireframes estáticos de Mi pedido y Confirmación en CaféU">
           <div class="screen"><div class="screen-title">4 · MI PEDIDO</div><div class="product">Café americano · $1.50 <br> Cantidad [−] 1 [+] · Quitar</div><div class="product">Subtotal · $1.50</div><div class="button">Seguir comprando</div><div class="button">Confirmar pedido</div></div>
           <div class="screen"><div class="screen-title">5 · CONFIRMACIÓN</div><div class="skeleton tall"></div><p class="screen-copy">¡Pedido recibido!</p><div class="product">Pedido #CU-104 · Café americano</div><div class="button">Volver al menú</div></div>
         </div>
-        <p class="diagram-caption">Bocetos estáticos: las acciones solo indican controles previstos. <a href="../prototipos/cafeu-wireframes.html" target="_blank" rel="noopener">Abrir lámina completa de wireframes</a>.</p>
+        <p class="diagram-caption">Bocetos estáticos: revisar el resumen antes de confirmar y mostrar claramente el resultado.</p>
+        <p class="diagram-caption"><a href="../prototipos/cafeu-wireframes.html" target="_blank" rel="noopener">Abrir lámina completa de los cinco wireframes</a>.</p>
       </section>
 
       <section>
@@ -201,12 +214,11 @@
           <span>Requisito</span><b>→</b><span>Sitemap</span><b>→</b><span>User flow</span><b>→</b><span>Componentes y navegación</span><b>→</b><span>Wireframes</span>
         </div>
         <div class="grid">
-          <div class="card"><h3>Requisito</h3><p>“El estudiante puede confirmar un pedido”.</p></div>
-          <div class="card"><h3>Sitemap</h3><p>Organiza Inicio, Menú, Detalle, Mi pedido y Confirmación.</p></div>
-          <div class="card"><h3>Flow</h3><p>Permite revisar y editar antes de confirmar.</p></div>
-          <div class="card"><h3>Wireframe</h3><p>Muestra resumen, edición, acción y estado exitoso.</p></div>
+          <div class="card"><h3>Requisito</h3><p>El estudiante confirma un pedido.</p></div>
+          <div class="card"><h3>Sitemap</h3><p>Inicio, Menú, Detalle, Mi pedido y Confirmación.</p></div>
+          <div class="card"><h3>Flow</h3><p>Revisa el pedido y puede editar antes de confirmar.</p></div>
+          <div class="card"><h3>Wireframe</h3><p>Resumen, edición y estado de éxito.</p></div>
         </div>
-        <div class="callout"><p>Si un elemento no ayuda a la tarea o al requisito, revisamos si es necesario.</p></div>
       </section>
 
       <section>
@@ -253,6 +265,11 @@
       </section>
     </div>
   </div>
+  <script>
+    if (new URLSearchParams(window.location.search).has('capture')) {
+      document.documentElement.classList.add('capture-mode');
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
   <script>
     Reveal.initialize({

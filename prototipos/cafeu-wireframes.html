@@ -63,11 +63,32 @@
       @page { size: landscape; margin: 10mm; }
       body { background: #fff; }
       main { max-width: none; padding: 0; }
-      header { margin-bottom: 16px; }
-      .screens { gap: 10px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
-      .screen { box-shadow: none; min-height: 410px; padding: 9px; }
-      .notice { margin-top: 10px; padding: 7px 10px; }
-      footer { margin-top: 12px; }
+      header { margin: 0 auto 8px; }
+      header h1 { font-size: 1.55rem; margin: .15em 0; }
+      header p { font-size: 8px; line-height: 1.25; margin: 3px 0; }
+      .eyebrow { font-size: 7px; }
+      .notice { font-size: 8px; margin-top: 5px; padding: 5px 8px; }
+      .screens { gap: 8px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .screen-card h2 { font-size: 8px; margin: 0 0 3px; }
+      .screen { box-shadow: none; min-height: 0; padding: 6px; }
+      .topbar { font-size: 7px; margin: 0 0 6px; padding-bottom: 5px; }
+      .muted, .item p { font-size: 7px; line-height: 1.25; }
+      .heading { font-size: 11px; margin: 5px 0; }
+      .placeholder { min-height: 42px; }
+      .placeholder.small { min-height: 23px; }
+      .placeholder.avatar { height: 25px; margin-bottom: 5px; }
+      .field { font-size: 7px; margin: 5px 0; padding: 4px; }
+      .filter-row { gap: 3px; margin: 5px 0; }
+      .chip { font-size: 6px; padding: 3px 5px; }
+      .item { margin: 5px 0; padding: 5px; }
+      .item h3 { font-size: 7px; }
+      .control { font-size: 7px; margin-top: 5px; padding: 4px; }
+      .control.inline { margin: 2px 0; padding: 3px 5px; }
+      .divider { margin: 6px 0; }
+      .status { font-size: 7px; margin-top: 5px; padding: 5px; }
+      .annotation { display: none; }
+      footer { font-size: 7px; margin: 6px auto 0; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     }
   </style>
 </head>
@@ -169,7 +190,7 @@
       </article>
     </section>
 
-    <footer>Ejemplo ficticio para explicar requisitos → sitemap → user flow → wireframes. No representa el proyecto real del grupo.</footer>
+    <footer>Ejemplo ficticio para explicar requisitos → sitemap → user flow → wireframes.</footer>
   </main>
 </body>
 </html>
