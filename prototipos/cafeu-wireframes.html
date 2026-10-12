@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Wireframes estáticos de baja fidelidad para el caso didáctico CaféU.">
+  <title>CaféU | Wireframes de baja fidelidad</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #202633;
+      background: #eef1f5;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { margin: 0 auto; max-width: 1440px; padding: 40px 28px 56px; }
+    header { margin: 0 auto 28px; max-width: 850px; text-align: center; }
+    .eyebrow { color: #5d6878; font-size: .76rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.04em; margin: .25em 0; }
+    header p { color: #566171; line-height: 1.6; margin: .5em 0; }
+    .notice { background: #fff; border: 1px solid #cbd2dc; border-left: 4px solid #77869a; border-radius: 8px; margin: 20px auto 0; max-width: 720px; padding: 12px 16px; text-align: left; }
+    .screens { display: grid; gap: 20px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .screen-card { min-width: 0; }
+    .screen-card h2 { font-size: .95rem; margin: 0 0 9px; }
+    .screen { background: #fff; border: 2px solid #8995a5; border-radius: 10px; box-shadow: 0 5px 16px #25334a12; min-height: 485px; overflow: hidden; padding: 15px; }
+    .topbar { align-items: center; border-bottom: 2px solid #c8ced7; display: flex; font-size: .78rem; font-weight: 750; justify-content: space-between; margin: -1px -1px 16px; padding: 0 0 12px; }
+    .muted { color: #687485; font-size: .82rem; line-height: 1.45; }
+    .heading { font-size: 1.2rem; line-height: 1.2; margin: 8px 0; }
+    .placeholder { background: repeating-linear-gradient(135deg, #e7eaf0, #e7eaf0 8px, #f2f4f7 8px, #f2f4f7 16px); border: 1px solid #c5ccd6; border-radius: 6px; min-height: 105px; }
+    .placeholder.small { min-height: 58px; }
+    .placeholder.avatar { border-radius: 50%; height: 56px; margin: 0 auto 12px; min-height: 0; width: 56px; }
+    .field { border: 1px solid #9ca7b5; border-radius: 5px; color: #6a7481; font-size: .8rem; margin: 12px 0; padding: 9px; }
+    .filter-row { display: flex; flex-wrap: wrap; gap: 5px; margin: 11px 0; }
+    .chip { border: 1px solid #aab3bf; border-radius: 999px; color: #4f5a68; font-size: .68rem; padding: 5px 8px; }
+    .item { border: 1px solid #bcc4ce; border-radius: 6px; margin: 9px 0; padding: 9px; }
+    .item h3 { font-size: .82rem; margin: 0 0 4px; }
+    .item p { color: #657080; font-size: .72rem; line-height: 1.35; margin: 3px 0; }
+    .row { align-items: center; display: flex; gap: 8px; justify-content: space-between; }
+    .control { background: #e5e8ed; border: 1px solid #9ca7b5; border-radius: 5px; color: #26303d; display: block; font-size: .75rem; font-weight: 700; margin-top: 11px; padding: 9px; text-align: center; }
+    .control.secondary { background: #fff; }
+    .control.inline { display: inline-block; margin: 4px 0; padding: 5px 8px; }
+    .divider { border: 0; border-top: 1px solid #d2d7df; margin: 14px 0; }
+    .annotation { color: #566171; font-size: .76rem; line-height: 1.5; margin: 9px 2px 0; }
+    .total { font-size: .9rem; font-weight: 750; }
+    .status { border: 1px dashed #929ead; border-radius: 6px; color: #46515f; font-size: .78rem; margin-top: 15px; padding: 9px; text-align: center; }
+    footer { color: #697484; font-size: .78rem; margin: 28px auto 0; max-width: 850px; text-align: center; }
+    @media (max-width: 1100px) {
+      .screens { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .screen { min-height: 440px; }
+    }
+    @media (max-width: 700px) {
+      main { padding: 26px 16px 40px; }
+      .screens { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+      .screen { min-height: 420px; padding: 11px; }
+    }
+    @media (max-width: 440px) {
+      .screens { grid-template-columns: 1fr; }
+      .screen { min-height: 0; }
+    }
+    @media print {
+      @page { size: landscape; margin: 10mm; }
+      body { background: #fff; }
+      main { max-width: none; padding: 0; }
+      header { margin-bottom: 16px; }
+      .screens { gap: 10px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .screen { box-shadow: none; min-height: 410px; padding: 9px; }
+      .notice { margin-top: 10px; padding: 7px 10px; }
+      footer { margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">APE 4 · Fase 1 · Caso didáctico</p>
+      <h1>CaféU: wireframes</h1>
+      <p>Flujo para consultar el menú, elegir un producto, revisar el pedido y recibir confirmación. Los bloques en escala de grises priorizan estructura, contenido y acciones.</p>
+      <div class="notice"><strong>Prototipo estático de baja fidelidad.</strong> Los controles son representaciones visuales para explicar la propuesta; no tienen navegación ni funcionalidad.</div>
+    </header>
+
+    <section class="screens" aria-label="Cinco wireframes de CaféU">
+      <article class="screen-card" aria-labelledby="screen-home">
+        <h2 id="screen-home">1. Inicio</h2>
+        <div class="screen">
+          <div class="topbar"><span>CaféU</span><span>Mi pedido · 0</span></div>
+          <div class="placeholder"></div>
+          <h3 class="heading">Pide antes de llegar</h3>
+          <p class="muted">Consulta el menú de hoy y prepara tu pedido para el descanso.</p>
+          <div class="control">Ver menú</div>
+          <hr class="divider">
+          <p class="muted">Horario de atención</p>
+          <div class="placeholder small"></div>
+        </div>
+        <p class="annotation">Punto de entrada con acceso directo al menú y al pedido actual.</p>
+      </article>
+
+      <article class="screen-card" aria-labelledby="screen-menu">
+        <h2 id="screen-menu">2. Menú</h2>
+        <div class="screen">
+          <div class="topbar"><span>‹ Inicio</span><span>Mi pedido · 1</span></div>
+          <h3 class="heading">Menú de hoy</h3>
+          <div class="field">Buscar productos…</div>
+          <div class="filter-row"><span class="chip">Todo</span><span class="chip">Bebidas</span><span class="chip">Comida</span></div>
+          <div class="item">
+            <div class="placeholder small"></div>
+            <h3>Café americano</h3><p>Café recién preparado · $1.50</p>
+            <div class="control secondary">Ver detalle</div>
+          </div>
+          <div class="item">
+            <h3>Sanduche de queso</h3><p>Preparado al momento · $2.75</p>
+            <div class="control secondary">Ver detalle</div>
+          </div>
+        </div>
+        <p class="annotation">Búsqueda, filtros y tarjetas permiten comparar productos antes de elegir.</p>
+      </article>
+
+      <article class="screen-card" aria-labelledby="screen-detail">
+        <h2 id="screen-detail">3. Detalle del producto</h2>
+        <div class="screen">
+          <div class="topbar"><span>‹ Menú</span><span>Mi pedido · 0</span></div>
+          <div class="placeholder"></div>
+          <h3 class="heading">Café americano</h3>
+          <p class="muted">Café preparado al momento. Tamaño mediano.</p>
+          <p class="total">$1.50</p>
+          <hr class="divider">
+          <p class="muted">Cantidad</p>
+          <div class="row"><span class="control inline">−</span><strong>1</strong><span class="control inline">+</span></div>
+          <div class="control">Agregar al pedido</div>
+        </div>
+        <p class="annotation">Presenta la información necesaria y deja clara la acción de agregar.</p>
+      </article>
+
+      <article class="screen-card" aria-labelledby="screen-order">
+        <h2 id="screen-order">4. Mi pedido</h2>
+        <div class="screen">
+          <div class="topbar"><span>‹ Seguir comprando</span><span>Mi pedido</span></div>
+          <h3 class="heading">Revisa tu pedido</h3>
+          <div class="item">
+            <h3>Café americano</h3><p>$1.50 · Cantidad</p>
+            <div class="row"><span class="control inline">−</span><strong>1</strong><span class="control inline">+</span><span class="muted">Quitar</span></div>
+          </div>
+          <div class="item">
+            <div class="row"><span class="muted">Subtotal</span><span class="total">$1.50</span></div>
+            <p class="muted">Total a pagar en cafetería</p>
+          </div>
+          <div class="control secondary">Volver al menú</div>
+          <div class="control">Confirmar pedido</div>
+        </div>
+        <p class="annotation">Permite corregir cantidades o quitar productos antes de confirmar.</p>
+      </article>
+
+      <article class="screen-card" aria-labelledby="screen-confirmation">
+        <h2 id="screen-confirmation">5. Confirmación</h2>
+        <div class="screen">
+          <div class="topbar"><span>CaféU</span><span>Pedido recibido</span></div>
+          <div class="placeholder avatar"></div>
+          <h3 class="heading" style="text-align:center">¡Pedido confirmado!</h3>
+          <p class="muted" style="text-align:center">La cafetería recibió tu pedido.</p>
+          <div class="status">Número de pedido<br><strong>#CU-104</strong></div>
+          <div class="item">
+            <h3>Resumen</h3><p>1 × Café americano</p><p>Total · $1.50</p>
+          </div>
+          <p class="muted">Puedes mostrar el número al retirar tu pedido.</p>
+          <div class="control secondary">Volver al menú</div>
+        </div>
+        <p class="annotation">El estado final confirma que la tarea terminó y resume lo recibido.</p>
+      </article>
+    </section>
+
+    <footer>Ejemplo ficticio para explicar requisitos → sitemap → user flow → wireframes. No representa el proyecto real del grupo.</footer>
+  </main>
+</body>
+</html>

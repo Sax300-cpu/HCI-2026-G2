@@ -50,10 +50,11 @@ Las herramientas son sugerencias; se puede comenzar con papel y lápiz. Lo impor
 - Sitemap del caso CaféU.
 - User flow de una tarea principal: consultar productos, seleccionar uno y confirmar el pedido.
 - Definición inicial de las pantallas, su navegación y sus componentes.
-- Wireframes de baja fidelidad que comuniquen la estructura de la interfaz.
+- Cinco wireframes estáticos de baja fidelidad: Inicio, Menú, Detalle del producto, Mi pedido y Confirmación.
 - Explicación didáctica de la secuencia requisito → arquitectura → flujo → wireframe.
 
 Estos resultados corresponden al ejemplo de la exposición. La implementación obligatoria de la Fase 1 en el proyecto del grupo se desarrollará después.
+Los wireframes son estáticos: muestran controles previstos, pero no conforman un prototipo navegable ni de alta fidelidad.
 
 ## Integrantes
 
@@ -69,6 +70,7 @@ Los wireframes permiten hacer visibles las ideas de una interfaz y conversar sob
 ## Archivos
 
 - [`presentacion/index.html`](presentacion/index.html): exposición navegable con Reveal.js.
+- [`prototipos/cafeu-wireframes.html`](prototipos/cafeu-wireframes.html): lámina adaptable e imprimible con los cinco wireframes de baja fidelidad del ejemplo CaféU.
 - [`docs/investigacion.md`](docs/investigacion.md): conceptos y procedimiento de la Fase 1.
 - [`docs/preguntas.md`](docs/preguntas.md): banco de 10 preguntas con respuestas y opciones para preparar la evaluación en Wayground.
 - [`docs/preguntas_wayground.csv`](docs/preguntas_wayground.csv): preguntas en formato tabular CSV para facilitar su carga o copia.
