@@ -70,6 +70,7 @@ Los wireframes permiten hacer visibles las ideas de una interfaz y conversar sob
 ## Archivos
 
 - [`presentacion/index.html`](presentacion/index.html): exposición navegable con Reveal.js.
+- [`presentacion/ejercicio-cafeu.html`](presentacion/ejercicio-cafeu.html): actividad grupal para dibujar las ramas del user flow y un wireframe de baja fidelidad para cada rama.
 - [`prototipos/cafeu-wireframes.html`](prototipos/cafeu-wireframes.html): lámina adaptable e imprimible con los cinco wireframes de baja fidelidad del ejemplo CaféU.
 - [`resultados/presentacion-cafeu.pdf`](resultados/presentacion-cafeu.pdf): versión PDF de la presentación.
 - [`docs/investigacion.md`](docs/investigacion.md): conceptos y procedimiento de la Fase 1.

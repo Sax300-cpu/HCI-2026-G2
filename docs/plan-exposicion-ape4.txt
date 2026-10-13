@@ -1,0 +1,98 @@
+PLAN DE EXPOSICIÓN — APE 4: PROTOTIPOS Y WIREFRAMES
+Grupo 2 · Caso didáctico CaféU
+Fechas previstas: 13 y 14 de octubre de 2026
+
+OBJETIVO
+Explicar cómo pasar de una necesidad y un requisito a un sitemap, un user flow,
+la navegación/componentes y wireframes de baja fidelidad. CaféU es el ejemplo
+didáctico de esta exposición; los wireframes son estáticos, no un prototipo
+navegable.
+
+ARCHIVOS PARA PRESENTAR Y COMPARTIR
+
+1. Presentación principal (diapositivas navegables):
+   presentacion/index.html
+   En XAMPP, con Apache iniciado:
+   http://localhost/ExposicionIHC/presentacion/index.html
+   Requiere conexión a internet para cargar Reveal.js desde CDN. Avanzar con las
+   flechas del teclado; F activa pantalla completa.
+
+2. PDF de respaldo de la presentación (15 páginas):
+   resultados/presentacion-cafeu.pdf
+
+3. PDF de los cinco wireframes, preparado por el grupo:
+   resultados/cafeU-wireframes.pdf
+
+4. Lámina HTML de wireframes, adaptable e imprimible:
+   prototipos/cafeu-wireframes.html
+
+5. Actividad grupal “¿Confirmar o editar?”:
+   presentacion/ejercicio-cafeu.html
+   Abrir después de mostrar el user flow; las soluciones están plegadas para
+   revelarlas luego de escuchar las propuestas de los grupos.
+
+Repositorio para compartir los PDF con los compañeros:
+https://github.com/Sax300-cpu/HCI-2026-G2
+Presentación PDF:
+https://github.com/Sax300-cpu/HCI-2026-G2/blob/main/resultados/presentacion-cafeu.pdf
+Wireframes PDF:
+https://github.com/Sax300-cpu/HCI-2026-G2/blob/main/resultados/cafeU-wireframes.pdf
+
+Si no está funcionando XAMPP o falla internet, proyectar el PDF de respaldo.
+El archivo HTML abre la presentación en el navegador de la computadora que lo
+ejecuta; para que los compañeros la vean en sus equipos, compartir los enlaces
+a los PDF del repositorio.
+
+DÍA 1 — 2 HORAS (13 DE OCTUBRE)
+
+00–10 min | Bienvenida, objetivo y agenda (diapositivas 1–2) — Kevin
+10–20 min | Problema: por qué diseñar antes de programar (diapositiva 3) — Kevin
+20–30 min | Prototipo, wireframe y fidelidad (diapositiva 4) — Luis
+30–40 min | Usuario, necesidad y tarea del ejemplo CaféU (diapositiva 5) — Ariel
+40–50 min | Video de 10 minutos — Luis lo introduce; todos lo ven
+50–60 min | Conversación sobre el video — Luis modera
+60–65 min | Pausa
+65–85 min | Sitemap: secciones de CaféU (diapositiva 6) — Manolo
+85–100 min | User flow para realizar el pedido (diapositiva 7) — Ariel
+100–115 min | Ejercicio: mini user flow y wireframe de confirmar/editar — equipo
+115–120 min | Recapitulación y adelanto de la próxima clase — Kevin
+
+Preguntas para orientar el video:
+- ¿Qué necesita la persona usuaria?
+- ¿Qué dificultad o fricción observamos?
+- ¿Qué artefacto de diseño ayudaría a anticipar esa dificultad?
+Descargar el video o tenerlo disponible localmente antes de clase.
+
+DÍA 2 — 3 HORAS (14 DE OCTUBRE)
+
+00–10 min | Repaso: reconstruir requisito → sitemap → flow — Kevin
+10–25 min | Revisar decisiones y alternativas del user flow — Luis
+25–45 min | Navegación y componentes (diapositiva 8) — Manolo
+45–55 min | Pausa
+55–80 min | Recorrido por los cinco wireframes (diapositivas 9–10) — Ariel
+80–100 min | Actividad en grupos: detectar una omisión o proponer una mejora — equipo
+100–115 min | Puesta en común de las propuestas — equipo
+115–125 min | Pausa
+125–145 min | Wayground: 10 preguntas y revisión de respuestas — Manolo gestiona
+145–160 min | Integrar requisito, sitemap, flow, wireframe y herramientas
+             (diapositivas 11–12) — Kevin
+160–170 min | Conclusiones (diapositiva 14) — Kevin y Ariel
+170–180 min | Preguntas y cierre; mostrar referencias si se solicitan (diapositiva 15)
+
+ACTIVIDAD SUGERIDA PARA EL DÍA 2
+En grupos, asignar una pantalla a cada grupo. Pedirles que revisen si la pantalla
+apoya la tarea del usuario, identifiquen un elemento faltante y propongan una
+mejora. Dar 10 minutos para trabajar y 5 para compartir respuestas.
+
+REPARTO DE RESPONSABILIDADES
+- Kevin: coordinación y tiempos; bienvenida, repaso y cierre.
+- Luis: conceptos, presentación del video y decisiones del recorrido.
+- Manolo: sitemap, navegación/componentes y manejo técnico de Wayground.
+- Ariel: caso CaféU, user flow y presentación de wireframes.
+- Los cuatro: facilitar los ejercicios y responder preguntas.
+
+CONSEJO DE TIEMPO
+No intentar hablar durante las cinco horas completas. Mantener las pausas y
+actividades; si hay retrasos, reducir la puesta en común antes que eliminar el
+video o el ejercicio. No terminar el contenido el primer día: cerrar con el
+sitemap y el flow, y retomar al día siguiente desde navegación y wireframes.

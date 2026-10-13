@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Actividad participativa sobre las ramas de confirmar y editar un pedido en CaféU.">
+  <title>Actividad CaféU | Confirmar o editar</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #171923;
+      color: #edf1f7;
+      font-synthesis: none;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { margin: 0 auto; max-width: 1280px; padding: 30px 34px 42px; }
+    .eyebrow { color: #70e1c1; font-size: .8rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4.5rem); letter-spacing: -.045em; line-height: 1.02; margin: .2em 0; }
+    h2 { color: #85b9ff; font-size: clamp(1.25rem, 2.4vw, 1.8rem); margin: 0 0 .65em; }
+    p, li { font-size: clamp(1rem, 1.5vw, 1.25rem); line-height: 1.5; }
+    .intro { color: #cbd4e2; font-size: clamp(1.1rem, 2vw, 1.5rem); margin: .35em 0 1.2em; }
+    .scenario { background: #222b30; border: 1px solid #41515a; border-left: 6px solid #70e1c1; border-radius: 12px; margin: 20px 0; padding: 20px 24px; }
+    .scenario p { margin: .35em 0; }
+    .order { align-items: center; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+    .item, .total { background: #252a34; border: 1px solid #515d6b; border-radius: 9px; padding: 10px 14px; }
+    .total { border-color: #70e1c1; color: #b4f2df; font-weight: 800; }
+    .cols { display: grid; grid-template-columns: 1fr; }
+    .panel { background: #20232d; border: 1px solid #3d4350; border-radius: 12px; padding: 20px 22px; }
+    .panel p:first-of-type { margin-top: 0; }
+    .questions { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); list-style: none; margin: 0; padding: 0; }
+    .questions li { background: #252a34; border-radius: 8px; padding: 10px 13px; }
+    details { background: #20232d; border: 1px solid #515d6b; border-radius: 10px; margin: 12px 0; }
+    summary { color: #b4f2df; cursor: pointer; font-size: 1.1rem; font-weight: 750; padding: 14px 18px; }
+    details[open] summary { border-bottom: 1px solid #414957; }
+    .answer { padding: 8px 20px 16px; }
+    .path { align-items: center; display: flex; flex-wrap: wrap; gap: 9px; margin: 12px 0; }
+    .step { background: #edf1f7; border: 1px solid #b5c0cf; border-radius: 8px; color: #172033; font-weight: 700; padding: 10px 13px; }
+    .arrow { color: #70e1c1; font-size: 1.5rem; font-weight: 800; }
+    .sketch-screen { background: #edf1f7; border: 2px solid #aab5c4; border-radius: 9px; color: #172033; margin: 12px 0; max-width: 560px; padding: 14px; }
+    .sketch-screen h3 { border-bottom: 2px solid #b4bfce; color: #172033; font-size: 1rem; margin: 0 0 10px; padding-bottom: 7px; }
+    .sketch-box { border: 1px solid #aab5c4; border-radius: 6px; margin: 7px 0; padding: 9px 11px; }
+    .sketch-action { background: #d5dce6; border: 1px solid #9ba8bb; border-radius: 5px; font-weight: 750; margin-top: 8px; padding: 9px; text-align: center; }
+    .sketch-note { color: #cbd4e2; font-size: .95rem; }
+    .takeaway { background: #203336; border-left: 6px solid #70e1c1; border-radius: 0 10px 10px 0; margin-top: 18px; padding: 14px 18px; }
+    .takeaway p { margin: 0; }
+    @media (max-width: 760px) {
+      main { padding: 22px 16px 32px; }
+      .cols, .questions { grid-template-columns: 1fr; }
+    }
+    @media print {
+      @page { size: landscape; margin: 12mm; }
+      body, :root { background: #171923 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      main { max-width: none; padding: 0; }
+      h1 { font-size: 30pt; }
+      h2 { font-size: 17pt; }
+      p, li { font-size: 12pt; }
+      .answer { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">APE 4 · Fase 1 · Actividad en grupos</p>
+      <h1>¿Confirmar o editar?</h1>
+      <p class="intro">CaféU · Dibujemos qué recorrido debe seguir la persona en cada caso.</p>
+    </header>
+
+    <section class="scenario" aria-labelledby="scenario-title">
+      <h2 id="scenario-title">Situación</h2>
+      <p>Un estudiante revisa su pedido. Debe decidir si lo confirma o si prefiere editarlo.</p>
+      <div class="order" aria-label="Resumen del pedido">
+        <span class="item">1 café americano · $1,50</span>
+        <span class="item">1 sanduche · $2,75</span>
+        <span class="total">Total · $4,25</span>
+      </div>
+    </section>
+
+    <div class="cols">
+      <section class="panel" aria-labelledby="task-title">
+        <h2 id="task-title">Consigna</h2>
+        <p>En grupos pequeños, elijan una de las dos ramas: confirmar o editar. Dibujen primero el recorrido y luego hagan un wireframe de baja fidelidad de la pantalla clave de esa rama. Usen cajas, flechas y etiquetas; sin colores ni programación.</p>
+        <ul class="questions">
+          <li>1. ¿En qué pantalla está?</li>
+          <li>2. ¿Qué acción realiza?</li>
+          <li>3. ¿Qué pantalla o estado aparece después?</li>
+          <li>4. ¿Qué información o control necesita?</li>
+        </ul>
+      </section>
+
+    </div>
+
+    <section aria-labelledby="compare-title">
+      <h2 id="compare-title">Comparación: revelar después de escuchar a los grupos</h2>
+      <details>
+        <summary>Recorrido sugerido: confirma el pedido</summary>
+        <div class="answer">
+          <div class="path" aria-label="Ruta de confirmación">
+            <span class="step">Revisar “Mi pedido”</span><span class="arrow" aria-hidden="true">→</span>
+            <span class="step">Pulsar “Confirmar pedido”</span><span class="arrow" aria-hidden="true">→</span>
+            <span class="step">Ver “Confirmación”</span>
+          </div>
+          <p>La confirmación debe mostrar que el pedido fue recibido y resumir qué se pidió para que la persona sepa que terminó la tarea.</p>
+          <h3>Wireframe posible · pantalla Confirmación</h3>
+          <div class="sketch-screen" aria-label="Wireframe de baja fidelidad de confirmación">
+            <h3>CaféU · Confirmación</h3>
+            <div class="sketch-box"><strong>¡Pedido recibido!</strong><br>Número de pedido: CU-104</div>
+            <div class="sketch-box">1 café americano · 1 sanduche<br>Total: $4,25</div>
+            <div class="sketch-action">Volver al menú</div>
+          </div>
+          <p class="sketch-note">El número es ilustrativo; el wireframe prioriza el estado, el resumen y la siguiente acción.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Recorrido sugerido: edita el pedido</summary>
+        <div class="answer">
+          <div class="path" aria-label="Ruta de edición">
+            <span class="step">Revisar “Mi pedido”</span><span class="arrow" aria-hidden="true">→</span>
+            <span class="step">Cambiar cantidad o quitar producto</span><span class="arrow" aria-hidden="true">→</span>
+            <span class="step">Actualizar el total</span><span class="arrow" aria-hidden="true">→</span>
+            <span class="step">Revisar de nuevo</span>
+          </div>
+          <p>El pedido se conserva y el resumen/total se actualiza. La persona puede corregirlo y confirmarlo cuando esté lista.</p>
+          <h3>Wireframe posible · pantalla Mi pedido</h3>
+          <div class="sketch-screen" aria-label="Wireframe de baja fidelidad de edición del pedido">
+            <h3>Mi pedido</h3>
+            <div class="sketch-box">Café americano · $1,50<br>Cantidad: [−] 1 [+] · Quitar</div>
+            <div class="sketch-box">Sanduche · $2,75<br>Cantidad: [−] 1 [+] · Quitar</div>
+            <div class="sketch-box"><strong>Total: $4,25</strong></div>
+            <div class="sketch-action">Seguir comprando</div>
+            <div class="sketch-action">Confirmar pedido</div>
+          </div>
+          <p class="sketch-note">Revisar que las cantidades, la opción de quitar productos y el total se entiendan.</p>
+        </div>
+      </details>
+    </section>
+
+    <aside class="takeaway">
+      <p><strong>Explicación para cerrar:</strong> “El user flow muestra el recorrido; el wireframe organiza la información y los controles de una pantalla. Uno nos ayuda a decidir qué debe mostrar el otro”.</p>
+    </aside>
+  </main>
+</body>
+</html>
