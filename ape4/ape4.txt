@@ -1,0 +1,212 @@
+\documentclass{article}
+
+% Language setting
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\graphicspath{{imagenes/}} 
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{amssymb} 
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{float}
+\pagestyle{fancy} 
+
+\fancyhf{}
+\setlength{\headheight}{70pt}
+
+% Definición del encabezado
+\fancyhead[C]{%
+    \begin{minipage}[c]{1.5cm}
+        \includegraphics[width=1.5cm]{imagenes/uta.png}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{10cm} 
+        \centering
+        \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
+        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
+        \scriptsize \textbf{CARRERA SOFTWARE} \\[0.1cm]
+        \scriptsize \textbf{CICLO ACADÉMICO: ENERO - JULIO 2026}
+        \vspace{0.2cm}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{1.5cm}
+        \centering
+        \includegraphics[width=1.5cm]{imagenes/fisei.png}
+    \end{minipage}%
+}
+
+\begin{document}
+\begin{center}
+    {\large \textbf{INFORME DE GUÍA PRÁCTICA}} \\    
+\end{center}
+
+\section{Portada}
+\begin{flushleft}
+\begin{tabular}{ l p{8cm} }
+    \textbf{Tema:} & APE 4. Prototipado - Wireframes \\
+    \textbf{Unidad de Organización Curricular:} & Profesional \\
+    \textbf{Nivel y Paralelo:} &  5 - A \\
+    \textbf{Alumnos participante(s):} & Kevin Andres Velasco Huayamave \\& Miranda Tarupi Luis Sebastian \\ &  Garcia Amores Manolo Jose  \\& Cholota Bastidas Ariel Isai\\
+    \textbf{Asignatura:} & Interacción Humano/Computador \\
+    \textbf{Docente:} & Ing. Caiza Caizabuano Jose Ruben \\
+\end{tabular}
+\end{flushleft}
+
+\section{Informe de guía práctica}
+\subsection{Objetivos}
+\subsubsection{General}
+Crear un prototipo usable aplicando un wireframe.
+
+\subsubsection{Específicos}
+\begin{itemize}
+    \item Identificar los conceptos de prototipo, wireframe y fidelidad.
+    \item Construir el sitemap y el user flow del caso didáctico.
+    \item Definir la navegación y los componentes de cada pantalla.
+    \item Elaborar wireframes de baja fidelidad que representen la estructura de la interfaz.
+\end{itemize}
+
+
+\subsection{Modalidad}
+Presencial
+
+\subsection{Tiempo de duración}
+Presenciales: 4\\
+No presenciales: 0
+
+\subsection{Instrucciones}
+\textbf{Acciones previas:}
+\begin{itemize}
+    \item Ingrese al aula virtual de la asignatura, donde se encuentra el trabajo del tema tratado.
+    \item Elabore el trabajo siguiendo las definiciones, conceptos y procesos aprendidos en clase.
+    \item Desarrolle un prototipo usable aplicando software.
+\end{itemize}
+
+\textbf{Pasos:}
+\begin{enumerate}
+    \item Revisar el material entregado por el docente sobre la aplicación de Wireframes en la creación de prototipos.
+    \item Generar un prototipo aplicando elementos usables de interacción definidos en el software respectivo.
+    \item Aplicar los criterios de un buen diseño en la definición del prototipo.
+    \item Elaborar las conclusiones del trabajo.
+    \item Subir el archivo a la plataforma dentro de la fecha indicada.
+\end{enumerate}
+
+\subsection{Listado de equipos, materiales y recursos}
+\textbf{Listado de equipos y materiales generales empleados en la guía práctica:}
+\begin{itemize}
+    \item Computadora
+    \item Herramientas ofimáticas
+    \item Aula virtual
+    \item Internet
+    \item Visual Studio Code
+\end{itemize}
+
+\textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la guía práctica:}
+\begin{itemize}
+    \item[$\square$] Plataformas educativas
+    \item[$\square$] Simuladores y laboratorios virtuales
+    \item[$\square$] Aplicaciones educativas
+    \item[$\square$] Recursos audiovisuales
+    \item[$\square$] Gamificación
+    \item[$\blacksquare$] Inteligencia Artificial
+    \item Otros (Especifique): \underline{\hspace{5cm}}
+\end{itemize}
+
+\subsection{Actividades por desarrollar}
+Desarrollar la Guía APE en base al formato y las instrucciones brindadas
+
+
+\subsection{Resultados obtenidos}
+
+El resultado esperado de la guía es la creación de un prototipo usable aplicando un wireframe, formando un desarrollador que pueda lograr una vista o idea de su proyecto de manera fácil. Este informe corresponde a la Fase 1, centrada en los artefactos de baja fidelidad.
+
+A continuación se describen los artefactos elaborados en la Fase 1 para el caso didáctico CaféU:
+\begin{itemize}
+    \item \textbf{Sitemap:} se organizó jerárquicamente la estructura de la aplicación, partiendo de \textbf{Inicio}, que conduce a \textbf{Menú} y a \textbf{Mi pedido}. Desde el Menú se abre el \textbf{Detalle del producto}; al agregar un producto se actualiza Mi pedido y, al confirmar, se llega a la pantalla de \textbf{Confirmación}. Este diagrama permitió verificar que el requisito quedara cubierto sin omitir secciones.
+    \item \textbf{User flow:} se trazó el recorrido de la tarea principal —consultar el menú, elegir un producto, revisar el pedido y confirmarlo—, incluyendo la decisión clave de \textbf{confirmar} o \textbf{editar}. Esto permitió identificar los estados posibles (pedido editado, pedido confirmado) y evitar callejones sin salida.
+    \item \textbf{Navegación y componentes:} se definieron los controles de cada pantalla: encabezados y filtros en el Menú, el botón ``Agregar'' en el Detalle, los controles de cantidad y la acción ``Confirmar pedido'' en Mi pedido, y un mensaje de estado en la Confirmación. Cada componente responde a una acción o lectura comprensible.
+    \item \textbf{Wireframes de baja fidelidad:} se elaboraron cinco pantallas esquemáticas —Inicio, Menú, Detalle del producto, Mi pedido y Confirmación—, representando la ubicación del contenido, la jerarquía de la información y las acciones disponibles, sin definir aún los estilos finales.
+\end{itemize}
+
+A continuación se presentan los wireframes de baja fidelidad obtenidos (Figuras \ref{fig:w1} a \ref{fig:w5}).
+
+\subsubsection{Wireframes de baja fidelidad}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{imagenes/w1.png}
+    \caption{Wireframe de baja fidelidad — Inicio.}
+    \label{fig:w1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{imagenes/w2.png}
+    \caption{Wireframe de baja fidelidad — Menú.}
+    \label{fig:w2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{imagenes/w3.png}
+    \caption{Wireframe de baja fidelidad — Detalle del producto.}
+    \label{fig:w3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{imagenes/w4.png}
+    \caption{Wireframe de baja fidelidad — Mi pedido.}
+    \label{fig:w4}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{imagenes/w5.png}
+    \caption{Wireframe de baja fidelidad — Confirmación.}
+    \label{fig:w5}
+\end{figure}
+
+
+\subsection{Habilidades blandas empleadas en la práctica}
+\begin{itemize}
+    \item[$\square$] Liderazgo
+    \item[$\blacksquare$] Trabajo en equipo
+    \item[$\square$] Comunicación asertiva
+    \item[$\square$] La empatía
+    \item[$\blacksquare$] Pensamiento crítico
+    \item[$\square$] Flexibilidad
+    \item[$\square$] La resolución de conflictos
+    \item[$\square$] Adaptabilidad
+    \item[$\blacksquare$] Responsabilidad
+\end{itemize}
+
+\subsection{Conclusiones}
+\begin{itemize}
+    \item El estudiante aprende a usar y aplicar wireframes en la creación de prototipos usables, mejorando su creatividad y reduciendo costes.
+    \item Los wireframes permiten hacer visible la estructura de una interfaz antes de su implementación, lo que ayuda a detectar omisiones y problemas de navegación de forma temprana.
+\end{itemize}
+
+\subsection{Recomendaciones}
+Previo a la elaboración de las tareas, el estudiante debe revisar la bibliografía. Si se manifiestan dudas sobre el tema de la PAE, se invita a los estudiantes a acudir a las tutorías académicas.
+
+\subsection{Referencias}
+\begin{itemize}
+    \item ISO. (2019). \textit{ISO 9241-210:2019 Ergonomics of human-system interaction — Part 210: Human-centred design for interactive systems}. \href{https://www.iso.org/standard/77520.html}{iso.org/standard/77520.html}
+    \item Nielsen Norman Group. \textit{Wireframes}. \href{https://www.nngroup.com/articles/wireframes/}{nngroup.com/articles/wireframes/}
+    \item Nielsen Norman Group. \textit{Task Flows vs. User Flows}. \href{https://www.nngroup.com/articles/task-flows-user-flows/}{nngroup.com/articles/task-flows-user-flows/}
+    \item Interaction Design Foundation. \textit{What is Information Architecture?}. \href{https://www.interaction-design.org/literature/topics/information-architecture}{interaction-design.org}
+\end{itemize}
+
+\vspace{-3em}
+% \renewcommand{\refname}{}
+% \bibliographystyle{ieeetr}
+% \bibliography{sample}
+
+\end{document}
