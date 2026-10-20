@@ -62,14 +62,15 @@
 \section{Informe de guía práctica}
 \subsection{Objetivos}
 \subsubsection{General}
-Crear un prototipo usable aplicando un wireframe.
+Transformar los requisitos funcionales y las necesidades de los usuarios en una arquitectura de información, un mapa de navegación, flujos de usuario y wireframes de baja fidelidad.
 
 \subsubsection{Específicos}
 \begin{itemize}
-    \item Identificar los conceptos de prototipo, wireframe y fidelidad.
-    \item Construir el sitemap y el user flow del caso didáctico.
-    \item Definir la navegación y los componentes de cada pantalla.
-    \item Elaborar wireframes de baja fidelidad que representen la estructura de la interfaz.
+    \item Analizar los requisitos funcionales y relacionarlos con usuarios y pantallas.
+    \item Diseñar el sitemap con sus jerarquías y pantallas principales y secundarias.
+    \item Diseñar dos user flows de las tareas principales del usuario.
+    \item Definir la navegación y el inventario de componentes reutilizables.
+    \item Elaborar wireframes de baja fidelidad de las pantallas principales.
 \end{itemize}
 
 
@@ -119,20 +120,57 @@ No presenciales: 0
 \end{itemize}
 
 \subsection{Actividades por desarrollar}
-Desarrollar la Guía APE en base al formato y las instrucciones brindadas
+\begin{enumerate}
+    \item \textbf{Análisis de requisitos:} revisar los requisitos funcionales, identificar los usuarios y sus necesidades, seleccionar al menos tres funcionalidades principales y relacionarlas con las pantallas. \textbf{Producto:} matriz de requisitos, usuarios y pantallas.
+    \item \textbf{Diseño del sitemap:} construir el mapa del sitio o aplicación, identificar pantallas principales y secundarias y establecer jerarquías entre secciones. \textbf{Producto:} sitemap del proyecto.
+    \item \textbf{Diseño del user flow:} seleccionar dos tareas importantes, representar el recorrido desde el inicio hasta completar cada tarea e identificar acciones, decisiones y posibles errores. \textbf{Producto:} dos diagramas de flujo de usuario.
+    \item \textbf{Navegación y componentes:} definir el menú principal, los mecanismos de navegación y los componentes reutilizables (botones, formularios, tarjetas, menús y mensajes). \textbf{Producto:} esquema de navegación e inventario de componentes.
+    \item \textbf{Wireframes de baja fidelidad:} diseñar un mínimo de cuatro pantallas principales, manteniendo coherencia entre requisitos, sitemap, flujos y pantallas. \textbf{Producto:} wireframes iniciales.
+\end{enumerate}
 
 
 \subsection{Resultados obtenidos}
 
 El resultado esperado de la guía es la creación de un prototipo usable aplicando un wireframe, formando un desarrollador que pueda lograr una vista o idea de su proyecto de manera fácil. Este informe corresponde a la Fase 1, centrada en los artefactos de baja fidelidad.
 
-A continuación se describen los artefactos elaborados en la Fase 1 para el caso didáctico CaféU:
+\subsubsection{Matriz de requisitos, usuarios y pantallas}
+Se identificaron tres funcionalidades principales del caso didáctico CaféU y su correspondencia con las pantallas necesarias:
+
+\begin{center}
+\begin{tabular}{|p{5.4cm}|p{4.3cm}|p{4.2cm}|}
+\hline
+\textbf{Funcionalidad (requisito)} & \textbf{Usuario y necesidad} & \textbf{Pantallas} \\
+\hline
+Consultar el menú y los productos & El estudiante necesita ver qué hay disponible durante su descanso & Inicio, Menú \\
+\hline
+Agregar un producto al pedido & Elegir un producto y ajustar su cantidad & Detalle del producto, Mi pedido \\
+\hline
+Confirmar el pedido & Revisar y confirmar para saber que fue recibido & Mi pedido, Confirmación \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Sitemap}
+Se organizó jerárquicamente la estructura de la aplicación, partiendo de \textbf{Inicio}, que conduce a \textbf{Menú} y a \textbf{Mi pedido}. Desde el Menú se abre el \textbf{Detalle del producto}; al agregar un producto se actualiza Mi pedido y, al confirmar, se llega a la pantalla de \textbf{Confirmación}. Este diagrama permitió verificar que el requisito quedara cubierto sin omitir secciones.
+
+\subsubsection{User flows}
+Se diseñaron dos flujos para las tareas principales del usuario:
 \begin{itemize}
-    \item \textbf{Sitemap:} se organizó jerárquicamente la estructura de la aplicación, partiendo de \textbf{Inicio}, que conduce a \textbf{Menú} y a \textbf{Mi pedido}. Desde el Menú se abre el \textbf{Detalle del producto}; al agregar un producto se actualiza Mi pedido y, al confirmar, se llega a la pantalla de \textbf{Confirmación}. Este diagrama permitió verificar que el requisito quedara cubierto sin omitir secciones.
-    \item \textbf{User flow:} se trazó el recorrido de la tarea principal —consultar el menú, elegir un producto, revisar el pedido y confirmarlo—, incluyendo la decisión clave de \textbf{confirmar} o \textbf{editar}. Esto permitió identificar los estados posibles (pedido editado, pedido confirmado) y evitar callejones sin salida.
-    \item \textbf{Navegación y componentes:} se definieron los controles de cada pantalla: encabezados y filtros en el Menú, el botón ``Agregar'' en el Detalle, los controles de cantidad y la acción ``Confirmar pedido'' en Mi pedido, y un mensaje de estado en la Confirmación. Cada componente responde a una acción o lectura comprensible.
-    \item \textbf{Wireframes de baja fidelidad:} se elaboraron cinco pantallas esquemáticas —Inicio, Menú, Detalle del producto, Mi pedido y Confirmación—, representando la ubicación del contenido, la jerarquía de la información y las acciones disponibles, sin definir aún los estilos finales.
+    \item \textbf{Realizar un pedido:} Inicio $\rightarrow$ Menú $\rightarrow$ Detalle del producto $\rightarrow$ Agregar $\rightarrow$ Mi pedido $\rightarrow$ Confirmar $\rightarrow$ Confirmación.
+    \item \textbf{Editar o cancelar un pedido:} Mi pedido $\rightarrow$ Cambiar cantidad o quitar producto $\rightarrow$ Actualizar el total $\rightarrow$ Confirmar o cancelar.
 \end{itemize}
+En ambos se identificaron las acciones, las decisiones y los posibles errores, evitando callejones sin salida.
+
+\subsubsection{Esquema de navegación e inventario de componentes}
+\begin{itemize}
+    \item \textbf{Menú principal:} acceso a Inicio, Menú y Mi pedido.
+    \item \textbf{Mecanismos de navegación:} enlaces de retroceso (por ejemplo, ``Menú''), botón ``Ver mi pedido'' y filtros por categoría.
+    \item \textbf{Componentes reutilizables:} encabezado, buscador, tarjetas de producto, botones (Agregar, Confirmar), controles de cantidad y mensajes de estado.
+\end{itemize}
+La navegación se justifica por su claridad y consistencia: los mismos controles mantienen la misma función en todas las pantallas, lo que reduce la carga cognitiva del usuario.
+
+\subsubsection{Descripción de los wireframes}
+Se elaboraron cinco pantallas esquemáticas —Inicio, Menú, Detalle del producto, Mi pedido y Confirmación—, superando el mínimo de cuatro solicitado. En ellas se representa la distribución del contenido, la jerarquía de la información y las acciones disponibles, manteniendo coherencia con el sitemap y los flujos, sin definir aún los estilos finales.
 
 A continuación se presentan los wireframes de baja fidelidad obtenidos (Figuras \ref{fig:w1} a \ref{fig:w5}).
 
@@ -172,6 +210,33 @@ A continuación se presentan los wireframes de baja fidelidad obtenidos (Figuras
     \caption{Wireframe de baja fidelidad — Confirmación.}
     \label{fig:w5}
 \end{figure}
+
+
+\subsection{Explicación didáctica del proceso}
+La transición desde un requisito hasta un wireframe se demuestra con un requisito del caso CaféU:
+
+\begin{itemize}
+    \item \textbf{Requisito:} el estudiante debe poder consultar el menú y confirmar un pedido.
+    \item \textbf{Pantalla:} Menú, Mi pedido y Confirmación.
+    \item \textbf{Sitemap:} Inicio $\rightarrow$ Menú $\rightarrow$ Detalle del producto; Mi pedido $\rightarrow$ Confirmación.
+    \item \textbf{User flow:} Ingresar $\rightarrow$ Elegir producto $\rightarrow$ Agregar $\rightarrow$ Revisar $\rightarrow$ Confirmar.
+    \item \textbf{Componentes:} tarjetas, buscador, botones, controles de cantidad y mensajes.
+    \item \textbf{Wireframe:} boceto de las pantallas en baja fidelidad.
+\end{itemize}
+
+Estas decisiones se justifican porque cada pantalla y control responde a una acción o lectura del usuario, mejorando la claridad de la experiencia de uso.
+
+\subsection{Entregables}
+Los artefactos de la Fase 1 se publican en el repositorio de GitHub:
+\begin{enumerate}
+    \item Matriz de requisitos, usuarios y pantallas.
+    \item Sitemap del proyecto.
+    \item Dos diagramas de user flow.
+    \item Esquema de navegación e inventario de componentes.
+    \item Cinco wireframes de baja fidelidad.
+    \item Documento PDF con la explicación didáctica del proceso.
+    \item Enlace al prototipo: \url{https://github.com/Sax300-cpu/HCI-2026-G2/blob/main/prototipos/cafeu-wireframes.html}
+\end{enumerate}
 
 
 \subsection{Habilidades blandas empleadas en la práctica}

@@ -1,0 +1,173 @@
+PRÁCTICA EXPERIMENTAL DE APRENDIZAJE – APE 4 
+
+Fase 1: De los requisitos a la arquitectura de información, navegación y wireframes 
+
+Universidad Técnica de Ambato – FISEI 
+Asignatura: Interacción Humano-Computador 
+Nivel: Quinto semestre – Paralelos A  
+Modalidad: Práctica grupal 
+Puntuación: 3 puntos 
+Herramientas: Figma, GitHub, Draw.io o similares. 
+
+1. Objetivo de la práctica 
+
+Diseñar la estructura inicial de la interfaz del proyecto integrador, transformando los requisitos 
+funcionales y las necesidades de los usuarios en una arquitectura de información, un mapa de 
+navegación, flujos de usuario y wireframes de baja fidelidad. 
+
+Cada grupo deberá explicar didácticamente cómo se realiza la transición desde los requisitos 
+hasta una propuesta de interfaz organizada, comprensible y centrada en el usuario. 
+
+2. Actividades de la Fase 1 
+
+Actividad 1. Análisis de requisitos 
+
+   •  Revisar los requisitos funcionales del proyecto. 
+
+   •  Identificar los usuarios y sus necesidades. 
+
+   •  Seleccionar al menos tres funcionalidades principales. 
+
+   •  Relacionar cada funcionalidad con las pantallas necesarias. 
+
+Producto: Matriz de requisitos, usuarios y pantallas. 
+
+Actividad 2. Diseño del sitemap 
+
+   •  Construir el mapa del sitio o aplicación. 
+
+   •  Identificar pantallas principales y secundarias. 
+
+   •  Establecer jerarquías entre secciones. 
+
+   •  Organizar la información de forma lógica. 
+
+Producto: Sitemap del proyecto. 
+
+Actividad 3. Diseño del user flow 
+
+   •  Seleccionar dos tareas importantes que realizará el usuario. 
+
+   •  Representar el recorrido desde el inicio hasta completar cada tarea. 
+
+   •  Identificar acciones, decisiones y posibles errores. 
+
+   •  Incorporar alternativas de navegación. 
+
+Producto: Dos diagramas de flujo de usuario. 
+
+Actividad 4. Navegación y componentes 
+
+
+   •  Definir el menú principal y los mecanismos de navegación. 
+
+   •  Identificar componentes reutilizables: botones, formularios, tarjetas, menús y
+      mensajes. 
+
+   •  Justificar cómo la navegación facilita la interacción. 
+
+   •  Aplicar principios de usabilidad y consistencia. 
+
+Producto: Esquema de navegación e inventario de componentes. 
+
+Actividad 5. Wireframes de baja fidelidad 
+
+   •  Diseñar un mínimo de cuatro pantallas principales. 
+
+   •  Utilizar Figma o una herramienta equivalente. 
+
+   •  Representar la distribución de contenidos y controles. 
+
+   •  Mantener coherencia entre requisitos, sitemap, flujos y pantallas. 
+
+Producto: Cuatro wireframes iniciales. 
+
+3. Explicación didáctica del proceso 
+
+Cada grupo realizará una demostración breve utilizando un requisito real de su proyecto. 
+
+Deberá explicar la siguiente secuencia: 
+
+Requisito → Pantalla → Sitemap → User flow → Componentes → Wireframe 
+
+Ejemplo: 
+
+   •  Requisito: El usuario necesita registrar una cita. 
+
+   •  Pantalla: Formulario de registro de citas. 
+
+   •  Sitemap: Inicio → Citas → Nueva cita. 
+
+   •  User flow: Ingresar → Seleccionar fecha → Completar datos → Confirmar. 
+
+   •  Componentes: Calendario, campos de entrada, botones y mensajes. 
+
+   •  Wireframe: Boceto de la pantalla de registro de citas. 
+
+Los estudiantes deberán justificar sus decisiones de diseño y explicar cómo estas mejoran la 
+experiencia de usuario. 
+
+4. Entregables 
+
+Cada grupo publicará en su repositorio de GitHub una carpeta denominada APE4_Fase1, que 
+contendrá: 
+
+   1. Matriz de requisitos y pantallas. 
+
+   2. Sitemap del proyecto. 
+
+   3. Dos diagramas user flow. 
+
+   4. Esquema de navegación e inventario de componentes. 
+
+
+   5. Cuatro wireframes de baja fidelidad. 
+
+   6. Documento PDF con la explicación didáctica del proceso. 
+
+   7. Enlace al prototipo o archivo de Figma. 
+
+Todos los integrantes deberán evidenciar su participación mediante contribuciones verificables 
+en GitHub. 
+
+5. Rúbrica de evaluación 
+
+Criterio                                Puntuación 
+
+Análisis de requisitos y correspondencia con pantallas 0,40 
+
+Sitemap y organización de información   0,40 
+
+User flow y decisiones de navegación    0,50 
+
+Definición de componentes y navegación  0,40 
+
+Wireframes de baja fidelidad            0,60 
+
+Explicación didáctica y justificación   0,40 
+
+Trabajo colaborativo y evidencias en GitHub 0,30 
+
+TOTAL                                   3,00 
+
+6. Preguntas para la defensa 
+
+   1. ¿Cómo transformaron los requisitos funcionales del proyecto en pantallas y 
+      componentes de interfaz? 
+
+   2. ¿Qué criterios utilizaron para definir la estructura del sitemap y los recorridos del 
+      usuario? 
+
+   3. ¿Cómo contribuyen los wireframes diseñados a mejorar la usabilidad y reducir la carga 
+      cognitiva? 
+
+7. Resultado de aprendizaje 
+
+Al finalizar la práctica, los estudiantes serán capaces de transformar requisitos de usuario en 
+una propuesta inicial de arquitectura e interacción, aplicando principios de diseño centrado en 
+el usuario y documentando colaborativamente sus decisiones mediante Figma y GitHub. 
+
+ 
+
+
+
