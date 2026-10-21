@@ -1,7 +1,6 @@
 
-======================================================================
+=
      DESCRIPCIÓN TÉCNICA DE PANTALLAS REFINADAS - CASO CAFÉU
-======================================================================
 
 1. Pantalla de Inicio (Inicio):
    - Punto de entrada principal con banner promocional de productos del día.
