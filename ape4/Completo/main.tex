@@ -1,0 +1,439 @@
+\documentclass{article}
+
+% ================================================================
+% Idioma y codificación
+% ================================================================
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% ================================================================
+% Gráficos y layout
+% ================================================================
+\usepackage{graphicx}
+\graphicspath{{./}{imagenes/}{antes_despues/}{estados_microinteracciones/}}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[letterpaper,top=2cm,bottom=5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% ================================================================
+% Matemáticas y símbolos
+% ================================================================
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ================================================================
+% Tablas y color
+% ================================================================
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\definecolor{headerblue}{RGB}{30,60,120}
+
+% ================================================================
+% Listas, figuras y formato
+% ================================================================
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{70pt}
+
+% Definición del encabezado
+\fancyhead[C]{%
+    \begin{minipage}[c]{1.5cm}
+        \includegraphics[width=1.5cm]{imagenes/uta.png}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{10cm}
+        \centering
+        \small {\textbf{UNIVERSIDAD TÉCNICA DE AMBATO}} \\[0.1cm]
+        \scriptsize \textit{FACULTAD DE INGENIERÍA EN SISTEMAS ELECTRÓNICA E INDUSTRIAL} \\[0.1cm]
+        \scriptsize \textbf{CARRERA SOFTWARE} \\[0.1cm]
+        \scriptsize \textbf{CICLO ACADÉMICO: ENERO - JULIO 2026}
+        \vspace{0.2cm}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{1.5cm}
+        \centering
+        \includegraphics[width=1.5cm]{imagenes/fisei.png}
+    \end{minipage}%
+}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+\begin{center}
+    {\large \textbf{INFORME DE GUÍA PRÁCTICA}} \\
+\end{center}
+
+% ================================================================
+\section{Portada}
+% ================================================================
+\begin{flushleft}
+\begin{tabular}{ l p{9cm} }
+    \textbf{Tema:} & APE 4. Prototipado - Wireframes \\
+    \textbf{Unidad de Organización Curricular:} & Profesional \\
+    \textbf{Nivel y Paralelo:} & 5 - A \\
+    \textbf{Alumnos participante(s):} & Cholota Bastidas Ariel Isai \\
+                                      & García Amores Manolo José \\
+                                      & Miranda Tarupi Luis Sebastián \\
+                                      & Velasco Huayamave Kevin Andrés \\
+    \textbf{Asignatura:} & Interacción Humano/Computador \\
+    \textbf{Docente:} & Ing. Caiza Caizabuano Jose Ruben \\
+\end{tabular}
+\end{flushleft}
+
+% ================================================================
+\section{Informe de guía práctica}
+% ================================================================
+
+\subsection{Objetivos}
+\subsubsection{General}
+Crear un prototipo usable aplicando un wireframe.
+
+\subsubsection{Específicos}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Analizar los requisitos funcionales y relacionarlos con los usuarios y las pantallas del sistema.
+    \item Diseñar el sitemap jerárquico, definiendo secciones primarias y secundarias.
+    \item Construir los user flows de las tareas principales del usuario.
+    \item Definir el esquema de navegación y el inventario de componentes reutilizables.
+    \item Elaborar wireframes de baja fidelidad y refinarlos en un prototipo navegable evaluado con usuarios.
+\end{itemize}
+
+\subsection{Modalidad}
+Presencial
+
+\subsection{Tiempo de duración}
+Presenciales: 4\\
+No presenciales: 0
+
+\subsection{Instrucciones}
+\textbf{Acciones previas:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Ingrese al aula virtual de la asignatura en donde se halla el trabajo del tema tratado.
+    \item Elabore el trabajo siguiendo las definiciones, conceptos y procesos aprendidos en clase.
+    \item Desarrolle un prototipo usable aplicando software.
+\end{itemize}
+
+\textbf{Pasos:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+    \item Revisar el material entregado por el docente sobre la aplicación de Wireframes en la creación de prototipos.
+    \item Generar un prototipo aplicando elementos usables de interacción definidos en el software respectivo.
+    \item Aplicar los criterios de un buen diseño en la definición del prototipo.
+    \item Elaborar las conclusiones del trabajo.
+    \item Subir el archivo a la plataforma dentro de la fecha indicada.
+\end{enumerate}
+
+\subsection{Listado de equipos, materiales y recursos}
+\textbf{Listado de equipos y materiales generales empleados en la guía práctica:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item Computadora
+    \item Herramientas ofimáticas
+    \item Aula virtual
+    \item Internet
+    \item Visual Studio Code y Figma
+\end{itemize}
+
+\textbf{TAC (Tecnologías para el Aprendizaje y Conocimiento) empleados en la guía práctica:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item[$\square$] Plataformas educativas
+    \item[$\square$] Simuladores y laboratorios virtuales
+    \item[$\square$] Aplicaciones educativas
+    \item[$\square$] Recursos audiovisuales
+    \item[$\square$] Gamificación
+    \item[$\blacksquare$] Inteligencia Artificial
+    \item Otros (Especifique): \underline{\hspace{5cm}}
+\end{itemize}
+
+\subsection{Actividades por desarrollar}
+Desarrollar la Guía APE en base al formato y las instrucciones brindadas:
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Análisis de requisitos:} identificar usuarios, necesidades y funcionalidades, y relacionarlas con las pantallas.
+    \item \textbf{Diseño del sitemap:} construir el mapa del sitio con sus jerarquías.
+    \item \textbf{Diseño del user flow:} representar el recorrido de las tareas principales con decisiones y errores.
+    \item \textbf{Navegación y componentes:} definir el menú, los mecanismos de navegación y los componentes reutilizables.
+    \item \textbf{Wireframes de baja fidelidad:} representar la distribución del contenido y los controles, y refinarlos en un prototipo navegable.
+\end{enumerate}
+
+\subsection{Resultados obtenidos}
+El resultado de la práctica es la creación de un prototipo usable aplicando un wireframe, formando un desarrollador que pueda lograr una vista o idea de su proyecto de manera fácil. A continuación se detallan los artefactos elaborados para el caso didáctico \textbf{CaféU}, desde la Fase 1 (baja fidelidad) hasta la Fase 2 (prototipo navegable, evaluación con usuarios y mejora).
+
+\subsubsection{Matriz de requisitos, usuarios y pantallas}
+Se identificaron tres funcionalidades principales para la cafetería universitaria CaféU y su correspondencia con las pantallas del sistema:
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{|X|X|p{4cm}|}
+\hline
+\rowcolor{headerblue}
+\textcolor{white}{\textbf{Funcionalidad (Requisito)}} & \textcolor{white}{\textbf{Usuario y Necesidad}} & \textcolor{white}{\textbf{Pantallas}} \\ \hline
+Consultar el menú y los productos disponibles. & El estudiante necesita ver qué hay disponible durante su descanso. & Inicio, Menú \\ \hline
+Agregar un producto al pedido con personalización de cantidad. & Elegir un producto, ajustar su cantidad y agregarlo a la orden. & Detalle del producto, Mi pedido \\ \hline
+Confirmar el pedido y recibir código de retiro. & Revisar y confirmar la orden para saber que fue recibida en cafetería. & Mi pedido, Confirmación \\ \hline
+\end{tabularx}
+\caption{Matriz de requisitos funcionales, usuarios y pantallas del caso CaféU.}
+\end{table}
+
+\subsubsection{Diagnóstico: usuario, tareas y problemas priorizados}
+\textbf{Usuario identificado:} estudiante universitario que dispone de poco tiempo en su descanso y necesita consultar el menú y realizar un pedido sin confusiones.
+
+Se definieron tres tareas principales para la validación:
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{T1 (Localizar y seleccionar):} encontrar un producto relevante en el menú y seleccionar una acción.
+    \item \textbf{T2 (Completar o modificar):} modificar la cantidad o eliminar un producto del pedido, incluyendo validación o error.
+    \item \textbf{T3 (Finalizar y verificar):} confirmar el pedido y verificar que la operación fue recibida.
+\end{enumerate}
+
+La revisión de los wireframes permitió priorizar cinco problemas:
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+    \item La acción para eliminar un producto del carrito era poco visible.
+    \item El contraste de los botones secundarios y enlaces era insuficiente.
+    \item No existía un estado vacío que informara cuando el carrito no tenía productos.
+    \item Faltaba retroalimentación durante el procesamiento de la orden.
+    \item El botón final de confirmación no destacaba lo suficiente.
+\end{enumerate}
+
+\subsubsection{Sitemap (Mapa del Sitio)}
+Se estructuró jerárquicamente la arquitectura de la información partiendo desde la pantalla de \textbf{Inicio}, la cual conecta con el \textbf{Menú} y con \textbf{Mi pedido}. Desde el Menú se accede al \textbf{Detalle del producto}, y al confirmar el carrito se avanza hacia la \textbf{Confirmación}.
+
+\subsubsection{User Flows (Flujos de Usuario)}
+Se diseñaron tres flujos de trabajo principales para evitar callejones sin salida:
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Flujo 1 (Realizar un pedido):} Inicio $\rightarrow$ Menú $\rightarrow$ Detalle del producto $\rightarrow$ Agregar $\rightarrow$ Mi pedido $\rightarrow$ Confirmar $\rightarrow$ Confirmación.
+    \item \textbf{Flujo 2 (Editar o cancelar pedido):} Mi pedido $\rightarrow$ Cambiar cantidad / Quitar producto $\rightarrow$ Actualizar total $\rightarrow$ Confirmar o cancelar.
+    \item \textbf{Flujo 3 (Buscar y consultar un producto):} Inicio $\rightarrow$ Menú $\rightarrow$ Buscar o filtrar por categoría $\rightarrow$ Detalle del producto.
+\end{itemize}
+
+\subsubsection{Esquema de navegación e inventario de componentes}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Menú Principal:} accesos superiores directos a Inicio, Menú y Mi pedido.
+    \item \textbf{Mecanismos de Navegación:} enlaces de retroceso (ej: ``Menú''), botones de acción rápida (``Ver mi pedido'') y filtros por categoría (Bebidas, Comida).
+    \item \textbf{Componentes Reutilizables:} encabezado unificado, tarjetas de producto, botones primarios/secundarios, controles de incremento (+/-) y tarjetas de resumen.
+\end{itemize}
+
+\subsubsection{Estados de la interfaz, feedback y microinteracciones}
+La interfaz contempla los estados normal, de procesamiento, de error y de éxito, además de mecanismos de retroalimentación y microinteracciones:
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Estado normal:} pantallas en reposo con los controles disponibles.
+    \item \textbf{Estado de procesamiento:} al confirmar el pedido se muestra una indicación de carga hasta registrar la orden.
+    \item \textbf{Estado de error:} si la operación no puede completarse, se muestra un mensaje con la causa y una opción para recuperarse.
+    \item \textbf{Estado de éxito:} la pantalla de Confirmación informa que el pedido fue recibido y entrega el código de retiro \#CU-104.
+    \item \textbf{Feedback de foco:} al interactuar con el buscador se aplica un contorno destacado en color rojo institucional, indicando dónde está el foco (Figura~\ref{fig:estado_foco}).
+    \item \textbf{Microinteracción de filtro:} las categorías (Todo, Bebidas, Comida) cambian de color al seleccionarse, resaltando la opción activa y reduciendo la carga cognitiva.
+    \item \textbf{Estado vacío:} cuando ``Mi pedido'' no tiene productos, se muestra una ilustración, el mensaje ``Aún no agregas productos'' y un botón para volver al menú.
+\end{itemize}
+
+En total se cubren cinco pantallas principales y dos estados adicionales (foco y vacío).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{estados_microinteracciones/01_estado_focus_busqueda.png}
+    \caption{Feedback de foco aplicado al buscador (Fase 2).}
+    \label{fig:estado_foco}
+\end{figure}
+
+\subsubsection{Comparativa de wireframes: Antes (Fase 1) vs. Después (Fase 2)}
+A continuación se presentan las 5 pantallas del sistema CaféU, mostrando la evolución desde el wireframe inicial de baja fidelidad hasta la versión refinada con mejoras en jerarquía visual, tipografía y contraste.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w1.png}
+        \caption{Inicio (Fase 1: Inicial)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w1_despues.jpeg}
+        \caption{Inicio (Fase 2: Refinado)}
+    \end{subfigure}
+    \caption{Pantalla 1: Inicio --- Punto de entrada con acceso directo al menú y estado del pedido actual.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w2.png}
+        \caption{Menú (Fase 1: Inicial)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w2_despues.jpeg}
+        \caption{Menú (Fase 2: Refinado)}
+    \end{subfigure}
+    \caption{Pantalla 2: Menú --- Buscador, filtros de categoría y tarjetas de comparación de productos.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w3.png}
+        \caption{Detalle (Fase 1: Inicial)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w3_despues.jpeg}
+        \caption{Detalle (Fase 2: Refinado)}
+    \end{subfigure}
+    \caption{Pantalla 3: Detalle del producto --- Ajuste de cantidad y botón claro para agregar a la orden.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w4.png}
+        \caption{Mi Pedido (Fase 1: Inicial)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w4_despues.jpeg}
+        \caption{Mi Pedido (Fase 2: Refinado)}
+    \end{subfigure}
+    \caption{Pantalla 4: Mi Pedido --- Revisión del desglose del subtotal y opción para corregir o confirmar.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w5.png}
+        \caption{Confirmación (Fase 1: Inicial)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{antes_despues/w5_despues.jpeg}
+        \caption{Confirmación (Fase 2: Refinado)}
+    \end{subfigure}
+    \caption{Pantalla 5: Confirmación --- Estado final con número de pedido (\#CU-104) para retiro.}
+\end{figure}
+
+\subsubsection{Prueba de usabilidad y accesibilidad}
+\textbf{Protocolo:} se evaluó el prototipo con dos participantes ajenos al equipo de diseño, aplicando las tareas T1, T2 y T3, y registrando el éxito, la dificultad percibida y los comentarios de cada participante, sin orientar sus acciones.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{|l|X|c|c|X|}
+\hline
+\rowcolor{headerblue}
+\textcolor{white}{\textbf{Participante}} & \textcolor{white}{\textbf{Tarea}} & \textcolor{white}{\textbf{¿Completó?}} & \textcolor{white}{\textbf{Dificultad}} & \textcolor{white}{\textbf{Observaciones}} \\ \hline
+Usuario 1 & T1: Realizar un pedido & Sí & Baja & Recorrido fluido; sugirió hacer más visible el botón de confirmación. \\ \hline
+Usuario 1 & T2: Editar y eliminar ítem & Sí & Media & Dudó al buscar la opción para quitar el producto. \\ \hline
+Usuario 2 & T1: Realizar un pedido & Sí & Baja & Completó sin inconvenientes ni bloqueos. \\ \hline
+Usuario 2 & T2: Editar y eliminar ítem & Sí & Baja & Sugirió aumentar el contraste de los botones secundarios. \\ \hline
+\end{tabularx}
+\caption{Registro de pruebas de usabilidad con dos participantes.}
+\end{table}
+
+\textbf{Heurísticas de Nielsen verificadas:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Visibilidad del estado del sistema:} el estado vacío, el feedback de foco y la pantalla de confirmación informan al usuario de la condición actual.
+    \item \textbf{Reconocimiento antes que recuerdo:} la acción de eliminar usa un botón con ícono de papelera, reconocible de forma inmediata.
+    \item \textbf{Consistencia y estándares:} los mismos componentes mantienen la misma función en todas las pantallas.
+\end{enumerate}
+
+\textbf{Condiciones de accesibilidad:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Contraste mínimo (WCAG 2.1, criterio 1.4.3):} se incrementó la relación de contraste de los textos a un ratio superior a 4.5:1.
+    \item \textbf{Foco visible por teclado:} el contorno destacado del buscador permite identificar el foco y navegar por teclado.
+\end{enumerate}
+
+\subsubsection{Iteración basada en evidencia}
+A partir de los hallazgos se corrigieron tres problemas y se comparó la versión inicial (Fase 1) con la refinada (Fase 2):
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\textwidth}{|c|X|X|}
+\hline
+\rowcolor{headerblue}
+\textcolor{white}{\textbf{\#}} & \textcolor{white}{\textbf{Hallazgo}} & \textcolor{white}{\textbf{Corrección aplicada}} \\ \hline
+1 & Dificultad para localizar la acción de eliminar un producto. & Se sustituyó el enlace de texto por un botón destacado con ícono de papelera en rojo. \\ \hline
+2 & Contraste insuficiente en botones secundarios y enlaces. & Se incrementó el contraste tipográfico por encima de 4.5:1. \\ \hline
+3 & Falta de aviso cuando el carrito estaba vacío. & Se diseñó un estado vacío informativo con botón de retorno. \\ \hline
+\end{tabularx}
+\caption{Matriz de hallazgos y correcciones aplicadas en la Fase 2.}
+\end{table}
+
+Las correcciones se justifican por los principios HCI correspondientes (reconocimiento antes que recuerdo, accesibilidad y visibilidad del estado del sistema) y se evidencian en la comparativa ``Antes'' y ``Después''.
+
+\subsubsection{Explicación didáctica del proceso}
+La transición desde un requisito hasta un wireframe se demuestra con un requisito del caso CaféU:
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Requisito:} el estudiante debe poder consultar el menú y confirmar un pedido.
+    \item \textbf{Pantalla:} Menú, Mi pedido y Confirmación.
+    \item \textbf{Sitemap:} Inicio $\rightarrow$ Menú $\rightarrow$ Detalle del producto; Mi pedido $\rightarrow$ Confirmación.
+    \item \textbf{User flow:} Ingresar $\rightarrow$ Elegir producto $\rightarrow$ Agregar $\rightarrow$ Revisar $\rightarrow$ Confirmar.
+    \item \textbf{Componentes:} tarjetas, buscador, botones, controles de cantidad y mensajes.
+    \item \textbf{Wireframe:} boceto de las pantallas en baja fidelidad.
+\end{itemize}
+
+\subsubsection{Defensa y contribución de cada integrante}
+Se realizó una demostración extremo a extremo del pedido completo: localizar un producto, agregarlo, revisar el carrito, confirmar y verificar la confirmación. Se mostró el error detectado (la opción para eliminar un producto resultaba poco visible) y su corrección (botón con ícono de papelera), verificando que el participante puede recuperarse sin abandonar el flujo.
+
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \textbf{Ariel Cholota:} wireframes de baja fidelidad y pruebas de usabilidad.
+    \item \textbf{Manolo García:} esquema de navegación, inventario de componentes y documentación.
+    \item \textbf{Luis Miranda:} user flows y estados/microinteracciones.
+    \item \textbf{Kevin Velasco:} sitemap, coordinación y gestión del repositorio.
+\end{itemize}
+
+\subsubsection{Entregables y organización en GitHub}
+Los entregables se publicaron en el repositorio \url{https://github.com/Sax300-cpu/HCI-2026-G2}, organizados en la carpeta \texttt{APE4-integral/}:
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+    \item \texttt{README.md}, \texttt{diagnostico.md} y \texttt{conclusiones.md}.
+    \item \texttt{sitemap.png/pdf} y \texttt{user-flow.png/pdf}.
+    \item \texttt{wireframes/}, \texttt{prototipo/} (enlace o código) y \texttt{evidencias/}.
+    \item \texttt{pruebas/protocolo.md}, \texttt{pruebas/resultados.csv} y \texttt{pruebas/hallazgos.md}.
+    \item \texttt{iteracion/antes-despues.md}.
+\end{itemize}
+Enlace al prototipo interactivo (Figma): \url{https://www.figma.com/make/9qmAFkWeKcifMwbmVkp5Q7/Caf%C3%A9U-Mobile-Web-App-Design}
+
+\subsection{Habilidades blandas empleadas en la práctica}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+    \item[$\blacksquare$] Liderazgo
+    \item[$\blacksquare$] Trabajo en equipo
+    \item[$\square$] Comunicación asertiva
+    \item[$\square$] La empatía
+    \item[$\square$] Pensamiento crítico
+    \item[$\square$] Flexibilidad
+    \item[$\square$] La resolución de conflictos
+    \item[$\square$] Adaptabilidad
+    \item[$\blacksquare$] Responsabilidad
+\end{itemize}
+
+\subsection{Conclusiones}
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item El estudiante aprende a usar y aplicar wireframes en la creación de prototipos usables, mejorando su creatividad y reduciendo costes.
+    \item La elaboración de wireframes permite estructurar la interfaz antes de la codificación, facilitando la detección temprana de problemas de navegación.
+    \item La coherencia entre la matriz de requisitos, el sitemap y los flujos garantiza que ninguna funcionalidad crítica del sistema quede omitida.
+\end{itemize}
+
+\subsection{Recomendaciones}
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item Previo a la elaboración de las tareas, el estudiante debe revisar la bibliografía. Si se manifiestan dudas sobre el tema de la PAE, se invita a los estudiantes a acudir a las tutorías académicas.
+    \item Realizar pruebas continuas de navegación con usuarios externos para identificar posibles ambigüedades en las etiquetas y botones del sistema.
+\end{itemize}
+
+\subsection{Referencias}
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item ISO. (2019). \textit{Ergonomics of human-system interaction --- Part 210: Human-centred design for interactive systems} (ISO Standard No. 9241-210:2019).
+    \item Nielsen Norman Group. (2020). \textit{Wireframing 101}. \url{https://www.nngroup.com/articles/wireframes/}
+    \item Nielsen Norman Group. (2021). \textit{Task Flows vs. User Flows}. \url{https://www.nngroup.com/articles/task-flows-user-flows/}
+    \item Interaction Design Foundation. \textit{What is Information Architecture?}. \url{https://www.interaction-design.org/literature/topics/information-architecture}
+\end{itemize}
+
+\end{document}
