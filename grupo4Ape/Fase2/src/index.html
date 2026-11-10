@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaféU — Confirmar pedido</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <p class="marca">CaféU</p>
+    <button type="button" class="carrito" aria-label="Ver mi pedido (2 artículos)">
+      🛒 <span id="contador" class="contador">2</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="pedido" aria-labelledby="titulo-pedido">
+      <h1 id="titulo-pedido">Mi pedido</h1>
+
+      <ul class="items" aria-label="Productos del pedido">
+        <li class="item">
+          <article class="tarjeta">
+            <h2 class="item-nombre">Café americano</h2>
+            <p class="item-detalle">Café de grano molido · 12 oz</p>
+            <p class="item-cantidad">× 2</p>
+            <p class="item-precio">$2.50</p>
+          </article>
+        </li>
+        <li class="item">
+          <article class="tarjeta">
+            <h2 class="item-nombre">Sánduche</h2>
+            <p class="item-detalle">Pan, jamón y queso</p>
+            <p class="item-cantidad">× 1</p>
+            <p class="item-precio">$2.50</p>
+          </article>
+        </li>
+      </ul>
+
+      <section class="resumen" aria-labelledby="titulo-resumen">
+        <h2 id="titulo-resumen" class="sr-only">Resumen del pedido</h2>
+        <dl class="datos">
+          <div class="fila">
+            <dt>Artículos</dt>
+            <dd>2</dd>
+          </div>
+          <div class="fila">
+            <dt>Subtotal</dt>
+            <dd>$5.00</dd>
+          </div>
+          <div class="fila total">
+            <dt>Total a pagar</dt>
+            <dd id="total">$5.00</dd>
+          </div>
+        </dl>
+
+        <div class="acciones">
+          <button type="button" id="confirmar" class="boton primario">Confirmar pedido</button>
+          <button type="button" id="cancelar" class="boton secundario" hidden>Cancelar pedido</button>
+        </div>
+      </section>
+
+      <p role="status" aria-live="polite" id="estado" class="estado"></p>
+    </section>
+  </main>
+
+  <script src="interaccion.js"></script>
+</body>
+</html>

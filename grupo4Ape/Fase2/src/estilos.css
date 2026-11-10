@@ -1,0 +1,229 @@
+/* ============================================================
+   CaféU — Estilos (Mobile-First estricto)
+   Base: una sola columna (320px y 360px).
+   @media (min-width: 48rem) = 768px+: dos columnas.
+   El orden del DOM no cambia entre resoluciones.
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --rojo: #c0392b;
+  --rojo-oscuro: #9b2c1f;
+  --tinta: #2c2c2c;
+  --muted: #6f6a66;
+  --linea: #e8ded7;
+  --fondo: #faf6f2;
+  --blanco: #ffffff;
+  --verde: #218a55;
+}
+
+html {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--tinta);
+  background: var(--fondo);
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden; /* seguridad: evita desborde horizontal */
+}
+
+/* -------------------- Encabezado -------------------- */
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: var(--blanco);
+  border-bottom: 1px solid var(--linea);
+}
+
+.marca {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--rojo);
+}
+
+.carrito {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--linea);
+  border-radius: 10px;
+  background: var(--blanco);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contador {
+  display: inline-block;
+  min-width: 1.2rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--rojo);
+  color: var(--blanco);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* -------------------- Contenido -------------------- */
+.pedido {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; /* una columna */
+  gap: 1rem;
+}
+
+#titulo-pedido {
+  font-size: 1.5rem;
+}
+
+/* -------------------- Lista de ítems -------------------- */
+.items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tarjeta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "nombre precio"
+    "detalle precio"
+    "cantidad precio";
+  gap: 0.25rem 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+}
+
+.item-nombre { grid-area: nombre; font-size: 1rem; }
+.item-detalle { grid-area: detalle; font-size: 0.8rem; color: var(--muted); }
+.item-cantidad { grid-area: cantidad; font-size: 0.85rem; color: var(--muted); }
+.item-precio { grid-area: precio; font-size: 1rem; font-weight: 600; align-self: center; }
+
+/* -------------------- Resumen (dl) -------------------- */
+.resumen {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.datos {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.fila {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+}
+
+.fila + .fila {
+  border-top: 1px solid var(--linea);
+}
+
+.fila dt { color: var(--muted); }
+.fila dd { font-weight: 600; }
+
+.fila.total dd {
+  font-size: 1.25rem;
+  color: var(--rojo);
+}
+
+/* -------------------- Botones -------------------- */
+.acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.boton {
+  min-height: 44px; /* área táctil mínima */
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.boton.primario {
+  background: var(--rojo);
+  color: var(--blanco);
+}
+
+.boton.primario:disabled {
+  background: #d9d5d1;
+  color: #827d79;
+  cursor: not-allowed;
+}
+
+.boton.secundario {
+  background: var(--blanco);
+  color: var(--rojo);
+  border-color: var(--linea);
+}
+
+/* Foco visible por teclado */
+.boton:focus-visible,
+.carrito:focus-visible {
+  outline: 3px solid #1f3a93;
+  outline-offset: 2px;
+}
+
+/* -------------------- Estado -------------------- */
+.estado {
+  min-height: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--verde);
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ============================================================
+   Punto de corte: 48rem (768px) — dos columnas.
+   No se reordena el DOM; solo se reparte el layout con grid.
+   ============================================================ */
+@media (min-width: 48rem) {
+  .pedido {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-areas:
+      "titulo titulo"
+      "items resumen"
+      "estado estado";
+    align-items: start;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  #titulo-pedido { grid-area: titulo; }
+  .items { grid-area: items; }
+  .resumen { grid-area: resumen; }
+  .estado { grid-area: estado; }
+}
