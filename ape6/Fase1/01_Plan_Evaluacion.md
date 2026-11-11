@@ -52,10 +52,10 @@ Se aplican dos métodos complementarios (analítico y empírico):
 
 | Rol | Integrante | Qué hace durante la sesión |
 | :--- | :--- | :--- |
-| **Moderador** | Luis Sebastián Miranda | Lee el guion de consentimiento y las tareas palabra por palabra. No ayuda ni señala la pantalla. |
-| **Registro de métricas** | Kevin [Apellido] | Una sola persona cronometra y anota éxito, tiempo y errores críticos/no críticos. |
-| **Observador** | Manuel [Apellido] | Anota frases textuales del usuario, dudas y la posible heurística de Nielsen violada. |
-| **Soporte técnico** | [Integrante 4] | Deja el prototipo CaféU en el estado inicial (recarga la página) y controla la grabación. |
+| **Moderador** | Luis Miranda | Lee el guion de consentimiento y las tareas palabra por palabra. No ayuda ni señala la pantalla. |
+| **Registro de métricas** | Kevin Velazco | Una sola persona cronometra y anota éxito, tiempo y errores críticos/no críticos. |
+| **Observador** | Manolo García | Anota frases textuales del usuario, dudas y la posible heurística de Nielsen violada. |
+| **Soporte técnico** | Ariel Cholota | Deja el prototipo CaféU en el estado inicial (recarga la página) y controla la grabación. |
 
 ## 7. Criterios de validación del protocolo (Paso a Fase 2)
 El protocolo se considerará validado y listo para la Fase 2 si cumple estas cinco condiciones:
