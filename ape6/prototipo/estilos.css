@@ -1,0 +1,190 @@
+/* ============================================================
+   CaféU — Estilos (Mobile-First)
+   App funcional de pedidos: Inicio · Menú · Detalle · Mi pedido · Confirmación
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --rojo: #c0392b;
+  --rojo-oscuro: #9b2c1f;
+  --tinta: #2c2c2c;
+  --muted: #6f6a66;
+  --linea: #e8ded7;
+  --fondo: #faf6f2;
+  --blanco: #ffffff;
+  --verde: #218a55;
+  --foco: #1f3a93;
+}
+
+html {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--tinta);
+  background: var(--fondo);
+}
+
+body { max-width: 100%; overflow-x: hidden; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ---------------- Encabezado ---------------- */
+.cabecera {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 1rem; background: var(--blanco);
+  border-bottom: 1px solid var(--linea);
+  position: sticky; top: 0; z-index: 10;
+}
+
+.marca { font-size: 1.4rem; font-weight: 700; color: var(--rojo); cursor: pointer; }
+
+.carrito {
+  min-height: 44px; min-width: 44px; padding: 0 0.75rem;
+  border: 1px solid var(--linea); border-radius: 10px;
+  background: var(--blanco); cursor: pointer; font-size: 1rem;
+}
+
+.contador {
+  display: inline-block; min-width: 1.2rem; padding: 0 0.35rem;
+  border-radius: 999px; background: var(--rojo); color: var(--blanco);
+  font-size: 0.8rem; text-align: center;
+}
+
+/* ---------------- Vistas ---------------- */
+.vista { padding: 1rem; max-width: 46rem; margin: 0 auto; }
+.vista[hidden] { display: none; }
+
+h1 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+/* ---------------- Botones ---------------- */
+.boton {
+  min-height: 44px; padding: 0.7rem 1.25rem; border-radius: 12px;
+  border: 1px solid transparent; font-size: 1rem; font-weight: 600; cursor: pointer;
+}
+.boton.primario { background: var(--rojo); color: var(--blanco); }
+.boton.primario:hover { background: var(--rojo-oscuro); }
+.boton.secundario { background: var(--blanco); color: var(--rojo); border-color: var(--linea); }
+.boton.texto { background: none; color: var(--rojo); border: none; padding-left: 0; min-height: 0; margin-bottom: 1rem; }
+
+.boton:focus-visible, .filtro:focus-visible, .carrito:focus-visible,
+.marca:focus-visible, .cat:focus-visible {
+  outline: 3px solid var(--foco); outline-offset: 2px;
+}
+
+/* ---------------- Inicio ---------------- */
+.hero {
+  background: linear-gradient(135deg, var(--rojo), var(--rojo-oscuro));
+  color: var(--blanco); border-radius: 16px; padding: 2rem 1.5rem;
+  margin-bottom: 1rem; text-align: center;
+}
+.hero h1 { color: var(--blanco); margin-bottom: 0.25rem; }
+.hero-sub { opacity: 0.92; margin-bottom: 1.25rem; }
+.hero .boton.primario { background: var(--blanco); color: var(--rojo); }
+
+.tarjeta-info {
+  background: var(--blanco); border: 1px solid var(--linea);
+  border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.75rem;
+}
+.tarjeta-info h2 { font-size: 1rem; color: var(--muted); margin-bottom: 0.25rem; }
+.dato-grande { font-size: 1.15rem; font-weight: 700; }
+
+/* ---------------- Menú ---------------- */
+.buscador input {
+  width: 100%; min-height: 44px; padding: 0 1rem;
+  border: 1px solid var(--linea); border-radius: 12px; font: inherit;
+  margin-bottom: 0.75rem;
+}
+.buscador input:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+
+.filtros { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.filtro {
+  min-height: 40px; padding: 0 1rem; border-radius: 999px;
+  border: 1px solid var(--linea); background: var(--blanco); cursor: pointer;
+  font: inherit; font-weight: 600;
+}
+.filtro.activo { background: var(--rojo); color: var(--blanco); border-color: var(--rojo); }
+
+.catalogo { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.cat {
+  display: flex; align-items: center; gap: 0.9rem;
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: 12px;
+  padding: 0.75rem 1rem; cursor: pointer; width: 100%; text-align: left; font: inherit;
+}
+.cat:hover { border-color: var(--rojo); }
+.cat .emoji { font-size: 2rem; }
+.cat .info { flex: 1; }
+.cat .nombre { font-weight: 600; }
+.cat .desc { font-size: 0.82rem; color: var(--muted); }
+.cat .precio { font-weight: 700; color: var(--rojo); white-space: nowrap; }
+.cat .categoria { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ---------------- Detalle ---------------- */
+.detalle {
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: 16px;
+  padding: 1.25rem; text-align: center;
+}
+.detalle .emoji { font-size: 4rem; margin-bottom: 0.5rem; }
+.detalle h2 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+.detalle .desc { color: var(--muted); margin-bottom: 0.5rem; }
+.detalle .precio { font-size: 1.5rem; font-weight: 700; color: var(--rojo); margin-bottom: 1rem; }
+
+.selector-cantidad { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+.selector-cantidad button {
+  width: 44px; height: 44px; border-radius: 10px; border: 1px solid var(--linea);
+  background: var(--blanco); font-size: 1.4rem; cursor: pointer; font-weight: 700;
+}
+.selector-cantidad .cant { font-size: 1.4rem; font-weight: 700; min-width: 2rem; text-align: center; }
+
+/* ---------------- Mi pedido ---------------- */
+.pedido-vacio { text-align: center; padding: 2rem 1rem; color: var(--muted); }
+.pedido-vacio .emoji { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+
+.linea-pedido {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: 12px;
+  padding: 0.6rem 0.9rem; margin-bottom: 0.6rem;
+}
+.linea-pedido .info { flex: 1; }
+.linea-pedido .nombre { font-weight: 600; }
+.linea-pedido .precio-unit { font-size: 0.8rem; color: var(--muted); }
+.linea-pedido .subtotal { font-weight: 700; white-space: nowrap; }
+
+.mini-selector { display: flex; align-items: center; gap: 0.4rem; }
+.mini-selector button {
+  width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--linea);
+  background: var(--blanco); cursor: pointer; font-weight: 700;
+}
+.quitar { color: var(--rojo); cursor: pointer; font-size: 1.1rem; border: none; background: none; }
+
+.resumen {
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: 12px;
+  padding: 0.9rem 1rem; margin: 1rem 0;
+}
+.fila { display: flex; justify-content: space-between; padding: 0.35rem 0; }
+.fila + .fila { border-top: 1px solid var(--linea); }
+.fila dt { color: var(--muted); }
+.fila dd { font-weight: 600; }
+.fila.total dd { font-size: 1.25rem; color: var(--rojo); font-weight: 700; }
+
+.acciones { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.estado { min-height: 1.5rem; font-size: 0.95rem; font-weight: 600; color: var(--verde); text-align: center; }
+
+/* ---------------- Confirmación ---------------- */
+.confirmacion { text-align: center; padding: 1rem; }
+.confirmacion .check { font-size: 3.5rem; }
+.confirmacion h2 { color: var(--verde); margin-bottom: 0.5rem; }
+.confirmacion .codigo {
+  font-size: 2rem; font-weight: 800; color: var(--rojo); letter-spacing: 0.05em; margin: 0.75rem 0;
+}
+.confirmacion .detalle-pedido { text-align: left; margin: 1rem 0; }
+
+/* ============================================================
+   Punto de corte: 48rem (768px). No reordena el DOM.
+   ============================================================ */
+@media (min-width: 48rem) {
+  .catalogo { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .acciones { flex-direction: row; justify-content: flex-end; }
+}

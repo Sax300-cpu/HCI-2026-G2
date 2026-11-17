@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaféU — Pedidos de cafetería</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <p class="marca" id="btn-inicio" tabindex="0" role="button" aria-label="Ir al inicio">CaféU</p>
+    <button type="button" class="carrito" id="btn-pedido" aria-label="Ver mi pedido">
+      🛒 <span id="contador" class="contador">0</span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ============ VISTA: INICIO ============ -->
+    <section id="vista-inicio" class="vista" aria-labelledby="titulo-inicio">
+      <div class="hero">
+        <h1 id="titulo-inicio">CaféU</h1>
+        <p class="hero-sub">Pide antes de llegar y recoge sin filas.</p>
+        <button type="button" class="boton primario" id="btn-ver-menu">Ver menú</button>
+      </div>
+      <div class="tarjeta-info">
+        <h2>Horario de atención</h2>
+        <p class="dato-grande">Lunes a viernes · 7:00 a 19:00</p>
+      </div>
+      <div class="tarjeta-info">
+        <h2>Ubicación</h2>
+        <p>Edificio de la cafetería, campus Huachi.</p>
+      </div>
+    </section>
+
+    <!-- ============ VISTA: MENÚ ============ -->
+    <section id="vista-menu" class="vista" hidden aria-labelledby="titulo-menu">
+      <h1 id="titulo-menu">Menú</h1>
+      <label class="buscador">
+        <span class="sr-only">Buscar productos</span>
+        <input type="search" id="buscador" placeholder="Buscar productos…">
+      </label>
+      <div class="filtros" role="group" aria-label="Filtrar por categoría">
+        <button type="button" class="filtro activo" data-cat="todas">Todas</button>
+        <button type="button" class="filtro" data-cat="bebidas">Bebidas</button>
+        <button type="button" class="filtro" data-cat="comida">Comida</button>
+      </div>
+      <ul class="catalogo" id="catalogo" aria-label="Catálogo de productos"></ul>
+    </section>
+
+    <!-- ============ VISTA: DETALLE ============ -->
+    <section id="vista-detalle" class="vista" hidden aria-labelledby="titulo-detalle">
+      <button type="button" class="boton texto" id="btn-volver-menu">← Volver al menú</button>
+      <div class="detalle" id="detalle-contenido"></div>
+    </section>
+
+    <!-- ============ VISTA: MI PEDIDO ============ -->
+    <section id="vista-pedido" class="vista" hidden aria-labelledby="titulo-pedido">
+      <h1 id="titulo-pedido">Mi pedido</h1>
+      <div id="pedido-contenido"></div>
+    </section>
+
+    <!-- ============ VISTA: CONFIRMACIÓN ============ -->
+    <section id="vista-confirmacion" class="vista" hidden aria-labelledby="titulo-confirmacion">
+      <div class="confirmacion" id="confirmacion-contenido"></div>
+    </section>
+  </main>
+
+  <p role="status" aria-live="polite" id="estado" class="estado"></p>
+
+  <script src="interaccion.js"></script>
+</body>
+</html>
