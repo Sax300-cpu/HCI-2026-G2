@@ -13,6 +13,8 @@
 
 ---
 
+El objetivo de esta fase es preparar y pilotear el protocolo de evaluación de CaféU. El pilotaje permite comprobar si las consignas, el registro de datos y la duración de la sesión funcionan en conjunto antes de continuar a la Fase 2.
+
 ## 1. Definición del prototipo (Objeto de evaluación)
 **CaféU** es un prototipo de aplicación web móvil para que los estudiantes pidan en la cafetería universitaria antes de llegar.
 
@@ -23,16 +25,22 @@
 ## 2. Pregunta de evaluación (Norma ISO 9241-11)
 «¿En qué medida el prototipo **CaféU** permite a los estudiantes universitarios consultar el menú y realizar pedidos en la cafetería universitaria antes de llegar con **eficacia**, **eficiencia** y **satisfacción**, y qué problemas de usabilidad lo impiden?»
 
+La pregunta se responde desde tres dimensiones. La **eficacia** indica si el estudiante logra el resultado esperado de cada tarea. La **eficiencia** refleja el esfuerzo observado, por ejemplo, cuánto tiempo le toma llegar a ese resultado. La **satisfacción** recoge su percepción de la experiencia mediante el cuestionario posterior a las tareas. [ISO 9241-11:2018](https://www.iso.org/standard/63500.html)
+
 ## 3. Métodos de evaluación (Triangulación)
 Se aplican dos métodos complementarios (analítico y empírico):
 1. **Evaluación heurística (Método analítico):** Los integrantes del equipo inspeccionan la interfaz aplicando las **10 heurísticas de usabilidad de Jakob Nielsen** (H1: Visibilidad del estado del sistema, H2: Relación entre el sistema y el mundo real, H3: Control y libertad del usuario, H4: Consistencia y estándares, H5: Prevención de errores, H6: Reconocer antes que recordar, H7: Flexibilidad y eficiencia de uso, H8: Diseño estético y minimalista, H9: Ayudar a reconocer, diagnosticar y recuperarse de errores, H10: Ayuda y documentación). Permite prever problemas y explicar qué principio se viola.
-2. **Prueba con usuarios y pensamiento en voz alta (Método empírico):** Tres usuarios reales ejecutan seis tareas representativas mientras verbalizan en voz alta lo que piensan, buscan o dudan frente a la interfaz. Confirma los problemas en el uso real y mide su impacto.
+2. **Prueba con usuarios y pensamiento en voz alta (Método empírico):** Tres usuarios reales ejecutan seis tareas representativas mientras verbalizan en voz alta lo que piensan, buscan o dudan frente a la interfaz. Permite observar qué problemas se manifiestan durante el uso y cómo afectan al desempeño.
+
+Durante la inspección, el equipo registra la pantalla o paso, el problema observado y la heurística relacionada. Por ejemplo, si al confirmar el pedido el código de retiro pasa desapercibido, se puede revisar la visibilidad del estado del sistema (H1). En la prueba con usuarios, el equipo observa si los participantes encuentran el código, cuánto tardan y qué comentarios hacen. Al revisar ambos registros, el equipo conserva la evidencia de cada método y vincula los hallazgos que describen el mismo problema.
 
 ## 4. Perfil y selección de participantes
 - **Perfil:** Estudiantes universitarios de la UTA que utilizan el servicio de cafetería y no forman parte del grupo desarrollador.
 - **Cantidad para el pilotaje:** 3 participantes.
 - **Criterios de exclusión:** Haber participado en el diseño o construcción del prototipo CaféU, conocer previamente las tareas de la evaluación o ser menor de edad.
 - **Identificación y anonimato:** Los participantes se registran únicamente con los códigos **P1, P2 y P3**. No se publican nombres ni datos personales en el repositorio ni en los informes.
+
+Antes de comenzar, el moderador verifica el perfil y solicita la participación voluntaria siguiendo el [consentimiento informado](02_Consentimiento_Informado.md). La grabación de pantalla y audio requiere autorización específica y se usa únicamente para el análisis interno. Si el participante no autoriza la grabación, el equipo usa la hoja de observación. El participante puede detener la sesión en cualquier momento.
 
 ## 5. Métricas de usabilidad y reglas de operación (ISO 9241-11)
 
@@ -43,7 +51,9 @@ Se aplican dos métodos complementarios (analítico y empírico):
 | **Errores** | Eficacia y eficiencia | **Críticos** (impiden terminar la tarea) y **No críticos** (el usuario se recupera por sí solo). |
 | **SUS** | Satisfacción | 10 ítems de 1 a 5. Ítems impares: `valor - 1`. Ítems pares: `5 - valor`. `Suma total × 2,5` (escala 0 a 100; referencia: 68). |
 
-### Reglas fijas antes de probar:
+La [hoja de observación y cuestionario SUS](04_Hoja_Observacion_SUS.md) identifica al participante por su código y tiene una fila por tarea para anotar el resultado, el tiempo en segundos, el uso de la pista y los errores observados. Por ejemplo, si P1 completa una tarea sin ayuda, P2 la completa con la pista y P3 no la termina, la tasa de éxito de esa tarea es **1 de 3 (33,3 %)**. El tiempo de cada intento se lee junto con su resultado, ya que un intento breve también puede corresponder a un abandono. El SUS se calcula una vez por participante al final de la sesión y su resultado se expresa como puntuación de 0 a 100.
+
+### Reglas fijas antes de probar
 - **Calificación del éxito:** Se clasifica en **«Sí»** (completa sin ayuda), **«Con ayuda»** (completa después de recibir la pista única) o **«No»** (no termina o supera el tiempo máximo). Solo «Sí» cuenta como éxito en la métrica.
 - **Pista única estandarizada:** Si el participante se detiene o solicita ayuda, se lee textualmente una sola vez la frase neutra: *«Vuelve a leer la tarea y revisa las opciones que tienes en pantalla»*.
 - **Reinicio al estado inicial:** Entre cada participante, el soporte técnico recarga la página web del prototipo CaféU en el navegador para dejar el pedido vacío y restablecer el estado inicial.
@@ -52,15 +62,24 @@ Se aplican dos métodos complementarios (analítico y empírico):
 
 | Rol | Integrante | Qué hace durante la sesión |
 | :--- | :--- | :--- |
-| **Moderador** | Luis Miranda | Lee el guion de consentimiento y las tareas palabra por palabra. No ayuda ni señala la pantalla. |
+| **Moderador** | Luis Miranda | Lee el guion de consentimiento y las tareas palabra por palabra. Aplica la pista estandarizada cuando corresponde y evita señalar controles o indicar pasos. |
 | **Registro de métricas** | Kevin Velazco | Una sola persona cronometra y anota éxito, tiempo y errores críticos/no críticos. |
 | **Observador** | Manolo García | Anota frases textuales del usuario, dudas y la posible heurística de Nielsen violada. |
 | **Soporte técnico** | Ariel Cholota | Deja el prototipo CaféU en el estado inicial (recarga la página) y controla la grabación. |
 
-## 7. Criterios de validación del protocolo (Paso a Fase 2)
+## 7. Desarrollo de una sesión
+
+1. **Preparación.** El soporte técnico abre CaféU y verifica que el pedido esté vacío. El responsable de métricas prepara la hoja de observación y el cronómetro. El equipo consulta la [matriz de seis tareas](03_Matriz_Seis_Tareas.md), que contiene las consignas, los resultados esperados y los tiempos meta y máximo.
+2. **Introducción.** El moderador lee el consentimiento, verifica la aceptación y explica que se evalúa la interfaz. Pide al participante que exprese lo que busca, lo que espera encontrar y las dudas que le surjan.
+3. **Ejecución de las seis tareas.** El moderador lee cada consigna tal como está escrita. Al terminar la lectura, el responsable de métricas inicia el cronómetro. Durante el intento, el observador anota acciones y comentarios relevantes. Si corresponde, el moderador usa la pista estandarizada una sola vez y el responsable de métricas registra su uso.
+4. **Cierre.** Después de las tareas, el participante responde los diez ítems del SUS. El equipo comprueba que la hoja quede completa, registra la duración total y restablece el prototipo para la siguiente sesión.
+
+## 8. Criterios de validación del protocolo (Paso a Fase 2)
 El protocolo se considerará validado y listo para la Fase 2 si cumple estas cinco condiciones:
 1. Ningún participante pide repetir la tarea por falta de claridad en la redacción.
 2. Al menos 2 de los 3 participantes terminan las tareas antes del tiempo máximo fijado.
 3. La hoja de observación permite registrar todos los datos sin omisiones.
 4. No se presentan fallos técnicos en el prototipo ni durante el reinicio entre sesiones.
 5. La sesión completa dura **20 minutos o menos** por participante.
+
+Al terminar el pilotaje, el equipo revisa las hojas de P1, P2 y P3 para comprobar cada condición. Si una consigna genera solicitudes de aclaración o una métrica queda sin registrar, se identifica el punto del protocolo que debe ajustarse y se comprueba el ajuste antes de pasar a la Fase 2.
