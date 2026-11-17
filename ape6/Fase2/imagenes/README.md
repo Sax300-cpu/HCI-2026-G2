@@ -31,3 +31,6 @@ Capturas de las sesiones con los participantes, **sin nombres ni rostros**:
 
 > Las grabaciones (pantalla/audio) se mantienen privadas; aquí solo van capturas
 > estáticas anonimizadas.
+
+Las imagenes de sesión son muy importantes porque nos muestran pruebas reales con usuarios reales que estan probando el sistema y en base al monitoreo del uso y las criticas constructivas podemos mejorar el sistema
+adaptandolo a las necesidades del usuario y por supuesto las métricas y Heurísticas propuesta en esta fase de la APE 6
