@@ -75,7 +75,7 @@
 % ================================================================
 \begin{flushleft}
 \begin{tabular}{ l p{9cm} }
-    \textbf{Tema:} & APE 6. Evaluación y validación --- Fase 3: Aplicación y análisis \\
+    \textbf{Tema:} & APE 6. Evaluación y validación --- Fases 3 y 4: Aplicación, análisis y cierre \\
     \textbf{Unidad de Organización Curricular:} & Profesional \\
     \textbf{Nivel y Paralelo:} & 5 - A \\
     \textbf{Alumnos participante(s):} & Cholota Bastidas Ariel Isai \\
@@ -93,7 +93,7 @@
 
 \subsection{Objetivos}
 \subsubsection{General}
-Ejecutar la evaluación formativa del prototipo \textbf{CaféU V2} mediante una inspección heurística independiente con severidad y una prueba de usabilidad con usuarios bajo pensamiento en voz alta, y consolidar las métricas de eficacia, eficiencia y satisfacción (ISO 9241-11:2018) que servirán de base para la priorización de la Fase 4.
+Ejecutar la evaluación formativa del prototipo \textbf{CaféU V2} mediante una inspección heurística independiente con severidad y una prueba de usabilidad con usuarios bajo pensamiento en voz alta, consolidar las métricas de eficacia, eficiencia y satisfacción (ISO 9241-11:2018) y cerrar la evaluación con la matriz de hallazgos, la triangulación de métodos, los criterios técnicos verificables y el backlog priorizado.
 
 \subsubsection{Específicos}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
@@ -103,7 +103,12 @@ Ejecutar la evaluación formativa del prototipo \textbf{CaféU V2} mediante una 
     \item Aplicar las 10 heurísticas de Nielsen de forma independiente y calificar cada problema con severidad de 1 a 4, ponderando frecuencia, impacto y persistencia.
     \item Ejecutar sesiones individuales con tres participantes externos aplicando el consentimiento informado, los cuatro roles del laboratorio y el cuestionario SUS.
     \item Calcular la tasa de éxito autónomo, los errores críticos y no críticos, la mediana de tiempo por tarea y el puntaje SUS.
-    \item Comparar los resultados con la Fase 2 y documentar los hallazgos que alimentarán la matriz consolidada de la Fase 4.
+    \item Comparar los resultados con la Fase 2 y documentar los hallazgos consolidados.
+    \item Consolidar los hallazgos de ambos métodos en una matriz única con severidad, prioridad y propuesta de mejora.
+    \item Triangular los resultados para distinguir los hallazgos comunes de los exclusivos de cada método.
+    \item Definir criterios técnicos verificables, con su estándar de respaldo y su umbral de aceptación.
+    \item Priorizar el backlog y dejar los Issues trazables en GitHub, con rama, responsable y revisor.
+    \item Responder la pregunta de evaluación y documentar las limitaciones del estudio.
 \end{itemize}
 
 \subsection{Modalidad}
@@ -133,7 +138,9 @@ No presenciales: 2
     \item Ejecutar F5 y verificar el estado inicial antes del siguiente participante.
     \item Consolidar las métricas ISO 9241-11 y compararlas con la Fase 2.
     \item Realizar la inspección heurística individual y consolidar las severidades.
-    \item Documentar los hallazgos y las evidencias en el repositorio.
+    \item Construir la matriz consolidada y triangular los dos métodos.
+    \item Definir los criterios técnicos verificables y priorizar el backlog.
+    \item Documentar los hallazgos, las conclusiones y las evidencias en el repositorio.
 \end{enumerate}
 
 \subsection{Listado de equipos, materiales y recursos}
@@ -165,6 +172,9 @@ No presenciales: 2
     \item \textbf{Evaluación heurística individual (3.2):} cada integrante inspecciona el prototipo con las 10 heurísticas de Nielsen y asigna severidad de 1 a 4. \textbf{Producto:} cuatro evaluaciones individuales y una consolidada.
     \item \textbf{Prueba con usuarios (3.3):} ejecutar las nueve tareas con tres participantes externos bajo pensamiento en voz alta y aplicar el SUS. \textbf{Producto:} registros P1, P2 y P3.
     \item \textbf{Métricas ISO 9241-11 (3.4):} calcular eficacia, eficiencia y satisfacción. \textbf{Producto:} resumen de métricas y comparación con la Fase 2.
+    \item \textbf{Consolidación y triangulación (4.1--4.2):} fusionar los hallazgos de ambos métodos, asignar prioridad y contrastar la cobertura de cada uno. \textbf{Producto:} matriz consolidada y análisis de triangulación.
+    \item \textbf{Criterios y backlog (4.3--4.4):} definir criterios verificables con su estándar y convertir los hallazgos en un backlog priorizado. \textbf{Producto:} criterios C-01 a C-09 y backlog P1--P4.
+    \item \textbf{Cierre y colaboración (4.5):} responder la pregunta de evaluación y preparar los Issues, ramas y Pull Requests. \textbf{Producto:} conclusiones, 9 Issues y plan de colaboración.
 \end{enumerate}
 
 \subsection{Resultados obtenidos}
@@ -399,33 +409,112 @@ Tareas y duración & 6 / 20 min & 9 / 30 min & Incluye las tareas de refuerzo \\
 \end{tabular}
 \end{center}
 
-\subsubsection{Hallazgos para la Fase 4}
+\subsubsection{Matriz consolidada de hallazgos (Fase 4.1)}
+La severidad consensuada es la mediana de los cuatro evaluadores. La prioridad combina esa severidad con la coincidencia de métodos y el impacto en las métricas ISO. Ningún hallazgo resultó crítico: los problemas están en la comunicación del estado y en la recuperación, no en el funcionamiento.
+
 \begin{center}
 \small
-\begin{tabular}{|c|p{6.2cm}|c|p{4.2cm}|p{2.2cm}|}
+\begin{tabular}{|c|p{6.1cm}|c|c|c|c|}
 \hline
-\textbf{ID} & \textbf{Hallazgo} & \textbf{Sev.} & \textbf{Evidencia} & \textbf{Origen} \\
+\textbf{ID} & \textbf{Hallazgo} & \textbf{Heur.} & \textbf{Sev.} & \textbf{Prior.} & \textbf{Criterio} \\
 \hline
-H-01 & Aviso «agregado» efímero y poco perceptible & 3 & Heurística 4/4; P2 y P3 no lo notaron & Ambos \\
+H-01 & Aviso «agregado» efímero y poco perceptible & H1 & 3 & P1 & C-01 \\
 \hline
-H-02 & Búsqueda sin resultados no ofrece recuperación & 3 & Heurística 4/4; P2 tardó 24 s en T8 & Ambos \\
+H-02 & Búsqueda sin resultados no ofrece recuperación & H9 & 3 & P1 & C-02 \\
 \hline
-H-03 & Salir de la confirmación borra el pedido sin aviso & 2 & Heurística 4/4; no observado en usuarios & Solo heurística \\
+H-03 & Salir de la confirmación borra el pedido sin aviso & H3 & 2 & P2 & C-03 \\
 \hline
-H-04 & Motivo del bloqueo de «Confirmar» separado y pequeño & 2 & Heurística 3/4; P2 necesitó la pista en T9 & Ambos \\
+H-04 & Motivo del bloqueo separado del botón & H5 & 2 & P1 & C-04 \\
 \hline
-H-05 & Código de retiro no copiable ni con instrucción & 2 & Heurística 4/4; ningún usuario lo intentó & Solo heurística \\
+H-05 & Código de retiro no copiable ni con instrucción & H10 & 2 & P2 & C-05 \\
 \hline
-H-06 & Contador del carrito sin unidad ni etiqueta & 1 & Heurística 4/4 & Solo heurística \\
+H-06 & Contador del carrito sin unidad ni etiqueta & H1/H2 & 1 & P4 & C-06 \\
 \hline
-H-07 & Sin indicador de pasos del flujo & 1 & Heurística 3/4 & Solo heurística \\
+H-07 & Sin indicador de pasos del flujo & H1 & 1 & P4 & C-07 \\
 \hline
-H-08 & Tocar un ítem del pedido no abre el detalle & 2 & P1 y P2 lo intentaron & Solo usuarios \\
+H-08 & Tocar un ítem del pedido no abre el detalle & H4 & 2 & P3 & C-08 \\
 \hline
-H-09 & Los usuarios buscan el total desde el menú & 1 & P3 lo comentó & Solo usuarios \\
+H-09 & Los usuarios buscan el total desde el menú & H6 & 1 & P4 & C-09 \\
 \hline
 \end{tabular}
 \end{center}
+
+Distribución: 0 críticos, 2 mayores, 4 menores y 3 cosméticos. La propuesta de mejora de cada hallazgo está en \texttt{docs/matriz-consolidada.md}.
+
+\subsubsection{Triangulación de métodos (Fase 4.2)}
+De los 9 hallazgos, la inspección detectó 7 (77,8~\%), los usuarios 5 (55,6~\%) y solo 3 coincidieron (33,3~\%). La heurística encuentra riesgos latentes que el recorrido feliz no dispara; los usuarios revelan expectativas que la inspección no puede anticipar.
+
+\begin{center}
+\small
+\begin{tabular}{|p{3.2cm}|p{8.4cm}|c|}
+\hline
+\textbf{Origen} & \textbf{Hallazgos} & \textbf{Cantidad} \\
+\hline
+Ambos métodos & H-01, H-02, H-04 & 3 \\
+\hline
+Solo heurística & H-03, H-05, H-06, H-07 & 4 \\
+\hline
+Solo usuarios & H-08, H-09 & 2 \\
+\hline
+\end{tabular}
+\end{center}
+
+Los tres hallazgos comunes son también los de mayor prioridad, lo que respalda la P1 sin depender de una sola fuente de evidencia.
+
+\subsubsection{Criterios técnicos verificables (Fase 4.3)}
+Cada hallazgo tiene un criterio observable, un estándar de respaldo y un umbral de aceptación. Un Issue no se cierra sin evidencia de su cumplimiento.
+
+\begin{center}
+\scriptsize
+\begin{tabular}{|c|p{4.3cm}|p{4.6cm}|p{4.2cm}|}
+\hline
+\textbf{ID} & \textbf{Criterio} & \textbf{Estándar} & \textbf{Umbral} \\
+\hline
+C-01 & El usuario percibe que el producto se agregó & ISO 9241-110; WCAG 4.1.3 y 1.4.3 & 3/3 sin mirar el contador; 5 s; 4,5:1 \\
+\hline
+C-02 & Entiende el vacío y puede salir & ISO 9241-110; WCAG 3.3.1 y 3.3.3 & 3/3 en 10 s o menos, sin pista \\
+\hline
+C-03 & Salir de la confirmación no destruye el pedido & ISO 9241-110; WCAG 3.3.1 & 0 pérdidas silenciosas \\
+\hline
+C-04 & Comprende por qué no puede confirmar & WCAG 3.3.1, 3.3.3 y 1.4.1 & 3/3 en 5 s o menos; motivo adyacente \\
+\hline
+C-05 & Copia el código y sabe para qué sirve & ISO 9241-110; Nielsen H10 & Un clic e instrucción de uso \\
+\hline
+C-06 & El contador comunica cantidad y unidad & WCAG 4.1.2 & Nombre accesible con unidad \\
+\hline
+C-07 & Sabe en qué paso del flujo está & WCAG 2.4.8; ISO 9241-110 & Indicador visible y \texttt{aria-current} \\
+\hline
+C-08 & El ítem del pedido abre su detalle & ISO 9241-110; WCAG 3.2.4 & 0 controles muertos \\
+\hline
+C-09 & El total se ve sin abrir el pedido & ISO 9241-110; Nielsen H6 & 3/3 lo leen desde el menú \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Backlog priorizado (Fase 4.4)}
+Los nueve hallazgos se agruparon en cuatro prioridades, con un esfuerzo total estimado de 22 horas y una iteración por grupo.
+
+\begin{center}
+\small
+\begin{tabular}{|c|c|c|c|p{5.2cm}|}
+\hline
+\textbf{Prior.} & \textbf{Hallazgos} & \textbf{Esf.} & \textbf{Iter.} & \textbf{Objetivo} \\
+\hline
+P1 & H-02, H-01, H-04 & 9 h & 1 & Percibir el estado y recuperarse de una búsqueda vacía \\
+\hline
+P2 & H-03, H-05 & 5 h & 2 & No perder el pedido ni el código de retiro \\
+\hline
+P3 & H-08 & 4 h & 2 & Editar el pedido igual que en el menú \\
+\hline
+P4 & H-06, H-07, H-09 & 4 h & 3 & Pulido de cabecera y total visible \\
+\hline
+\end{tabular}
+\end{center}
+
+El reparto asigna cada corrección a un integrante distinto de quien la evaluó, para reducir el sesgo de confirmación. El detalle está en \texttt{docs/backlog.md}.
+
+\subsubsection{Conclusiones de la evaluación (Fase 4.5)}
+\textbf{CaféU V2 es usable para completar el pedido y todavía no lo es para que el usuario entienda lo que ocurre mientras lo hace.} Las tres dimensiones de ISO 9241-11 cumplen: eficacia de 96,3~\%, eficiencia con las nueve medianas bajo su meta y satisfacción de 86,7 puntos SUS. Sin embargo, los dos hallazgos de severidad 3 (H-01 y H-02) no impidieron terminar las tareas, pero sí afectaron la comprensión del estado y la confianza. Cumplir las métricas no equivale a no tener problemas: la diferencia entre \emph{poder hacer} y \emph{saber qué está pasando} es la que guía el backlog de la siguiente versión.
 
 \subsubsection{Evidencias de la evaluación}
 \begin{figure}[H]
@@ -465,7 +554,7 @@ H-09 & Los usuarios buscan el total desde el menú & 1 & P3 lo comentó & Solo u
 \end{figure}
 
 \subsubsection{Organización en GitHub}
-Los entregables de la fase se encuentran en \texttt{ape6/Fase3-4/}: el README con las tablas de métricas, las cuatro evaluaciones heurísticas individuales, la evaluación consolidada, los registros P1--P3 y los documentos de ajustes y protocolo. El prototipo V2 está en \texttt{ape6/prototipo/} y el trabajo se mantiene en el repositorio \url{https://github.com/Sax300-cpu/HCI-2026-G2}.
+Los entregables se encuentran en \texttt{ape6/Fase3-4/}: el README con las tablas de métricas, las cuatro evaluaciones heurísticas individuales, la evaluación consolidada, los registros P1--P3, los documentos de ajustes y protocolo y, en \texttt{docs/}, la matriz consolidada, la triangulación, los criterios técnicos, el backlog y las conclusiones. La carpeta \texttt{github/} contiene los nueve Issues redactados, con etiquetas, ramas, criterios de aceptación y matriz de revisión, listos para crearlos en el repositorio. El prototipo V2 está en \texttt{ape6/prototipo/} y el trabajo se mantiene en \url{https://github.com/Sax300-cpu/HCI-2026-G2}. Cada integrante crea su Issue y su Pull Request desde su cuenta, de modo que la autoría y la revisión queden registradas.
 
 \subsection{Habilidades blandas empleadas en la práctica}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt]
@@ -486,7 +575,10 @@ Los entregables de la fase se encuentran en \texttt{ape6/Fase3-4/}: el README co
     \item La eficacia se mantuvo alta (96,3~\% de éxito autónomo) y no se registraron errores críticos; los tres errores no críticos fueron recuperados por los participantes.
     \item La eficiencia cumplió todas las metas, con una mediana máxima de 19 s (T3) y un caso de 18 s en T8 que refleja el problema de recuperación de la búsqueda.
     \item La satisfacción fue alta (SUS 86,7), aunque el participante con menor puntaje (P2, 77,5) fue justamente quien no percibió el aviso y necesitó ayuda en T9.
-    \item La inspección heurística y la prueba con usuarios aportaron hallazgos distintos: la heurística detectó problemas de estado y prevención que los usuarios no verbalizaron, y los usuarios revelaron expectativas de interacción (H-08 y H-09) que la inspección no anticipó. Esa diferencia justifica la triangulación de la Fase 4.
+    \item La inspección heurística y la prueba con usuarios aportaron hallazgos distintos: la heurística detectó cuatro riesgos que el recorrido feliz no disparó (H-03, H-05, H-06 y H-07) y los usuarios revelaron dos expectativas que ningún evaluador anticipó (H-08 y H-09).
+    \item La triangulación confirma que los métodos no son intercambiables: la inspección cubrió el 77,8~\% de los hallazgos y los usuarios el 55,6~\%, con solo un tercio en común. Los tres hallazgos compartidos son los de mayor prioridad.
+    \item La matriz consolidada cerró 9 hallazgos: 2 mayores, 4 menores y 3 cosméticos, sin ningún crítico. Los criterios C-01 a C-09 y el backlog de 22 horas permiten ejecutar las correcciones con evidencia y no por percepción.
+    \item CaféU V2 es usable para completar el pedido, pero todavía no para que el usuario entienda lo que ocurre mientras lo hace: esa es la brecha que debe cerrar la siguiente versión.
 \end{itemize}
 
 \subsection{Recomendaciones}
@@ -494,7 +586,9 @@ Los entregables de la fase se encuentran en \texttt{ape6/Fase3-4/}: el README co
     \item Mantener el reinicio F5 documentado y verificarlo antes de cada sesión para no contaminar los datos.
     \item Conservar la pista única estandarizada y registrar su uso, porque afecta la tasa de éxito autónomo.
     \item No declarar «usable» un prototipo solo porque las tareas se completan: los hallazgos de severidad 3 no impidieron terminar, pero sí afectaron la comprensión del estado.
-    \item Priorizar en la Fase 4 las correcciones de retroalimentación y recuperación antes que las cosméticas.
+    \item Ejecutar el backlog en el orden P1, P2, P3 y P4, re-ejecutando las tareas afectadas (T2, T8 y T9) al cerrar cada iteración.
+    \item Mantener los criterios técnicos como condición de cierre de cada Issue y exigir la revisión de un integrante distinto del autor.
+    \item Repetir la evaluación con cinco participantes después de las correcciones P1 y P2, incluyendo una tarea de exploración libre que pueda disparar H-03 y H-05.
 \end{itemize}
 
 \subsection{Referencias}
@@ -502,6 +596,7 @@ Los entregables de la fase se encuentran en \texttt{ape6/Fase3-4/}: el README co
     \item Boehm, B. (1984). \textit{Software Engineering Economics}. Prentice Hall.
     \item Brooke, J. (1996). \textit{SUS: A quick and dirty usability scale}. En \textit{Usability Evaluation in Industry}.
     \item ISO. (2018). \textit{ISO 9241-11:2018 Ergonomics of human-system interaction --- Part 11: Usability: Definitions and concepts}. \href{https://www.iso.org/standard/63500.html}{iso.org/standard/63500.html}
+    \item ISO. (2020). \textit{ISO 9241-110:2020 Ergonomics of human-system interaction --- Part 110: Dialogue principles}. \href{https://www.iso.org/standard/75258.html}{iso.org/standard/75258.html}
     \item Nielsen, J. (1994). \textit{10 Usability Heuristics for User Interface Design}. Nielsen Norman Group. \href{https://www.nngroup.com/articles/ten-usability-heuristics/}{nngroup.com}
     \item Nielsen, J. (1995). \textit{Severity Ratings for Usability Problems}. Nielsen Norman Group. \href{https://www.nngroup.com/articles/how-to-rate-the-severity-of-usability-problems/}{nngroup.com}
     \item W3C. (2023). \textit{Web Content Accessibility Guidelines (WCAG) 2.2}. \href{https://www.w3.org/TR/WCAG22/}{w3.org}

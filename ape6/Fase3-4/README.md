@@ -1,13 +1,15 @@
-# APE 6 — Fase 3: Aplicación y análisis
+# APE 6 — Fases 3 y 4: Aplicación, análisis y cierre
 
 **UNIVERSIDAD TÉCNICA DE AMBATO — FISEI — CARRERA DE SOFTWARE**
 **Asignatura:** Interacción Humano-Computador · **Ciclo:** Julio – Diciembre 2026
 **Prototipo:** CaféU **V2** (aplicación web móvil de pedidos de cafetería)
 **Integrantes:** Luis Miranda · Kevin Velasco · Manolo García · Ariel Cholota
 
-> **Estado:** Fase 3 completa (3.1 a 3.4). La Fase 4 (matriz consolidada, triangulación, criterios técnicos, backlog e Issues) se incorporará en la siguiente iteración.
+> **Estado:** fases 3 y 4 completas. La Fase 3 mide; la Fase 4 consolida, prioriza y deja el trabajo listo para GitHub.
 
 ---
+
+# Parte I — Fase 3: Aplicación y análisis
 
 ## 1. Ajuste post-pilotaje (Fase 3.1)
 
@@ -133,62 +135,160 @@ Detalle de cálculo y errores por tarea: [`resultados/metricas-iso.md`](resultad
 
 ---
 
-## 7. Hallazgos detectados (insumo para la Fase 4)
+# Parte II — Fase 4: Consolidación y cierre
 
-| ID | Hallazgo | Sev. | Evidencia | Origen |
-| :---: | :--- | :---: | :--- | :--- |
-| H-01 | Aviso «agregado» efímero y poco perceptible | 3 | Heurística 4/4 · P2 y P3 no lo notaron | Ambos |
-| H-02 | Búsqueda sin resultados no ofrece recuperación | 3 | Heurística 4/4 · P2 tardó 24 s en T8 | Ambos |
-| H-03 | Salir de la confirmación borra el pedido sin aviso | 2 | Heurística 4/4 · no observado en usuarios | Solo heurística |
-| H-04 | Motivo del bloqueo de «Confirmar» separado y pequeño | 2 | Heurística 3/4 · P2 necesitó la pista en T9 | Ambos |
-| H-05 | Código de retiro no copiable ni con instrucción | 2 | Heurística 4/4 · ningún usuario lo intentó | Solo heurística |
-| H-06 | Contador del carrito sin unidad ni etiqueta | 1 | Heurística 4/4 | Solo heurística |
-| H-07 | Sin indicador de pasos del flujo | 1 | Heurística 3/4 | Solo heurística |
-| H-08 | Tocar un ítem del pedido no abre el detalle | 2 | P1 y P2 lo intentaron | Solo usuarios |
-| H-09 | Los usuarios buscan el total desde el menú | 1 | P3 lo comentó | Solo usuarios |
+## 7. Matriz consolidada de hallazgos (Fase 4.1)
 
-> La triangulación formal, la matriz consolidada, los criterios técnicos (C-01…) y el backlog priorizado (P1–P4) corresponden a la **Fase 4** y se agregarán en la siguiente iteración.
+Regla: severidad = mediana de los cuatro evaluadores; los hallazgos que solo detectó un método se calificaron con su propia evidencia. La prioridad combina severidad, coincidencia de métodos e impacto en las métricas ISO.
+
+| ID | Hallazgo | Heurística | Sev. | Prioridad | Criterio | Responsable |
+| :---: | :--- | :--- | :---: | :---: | :---: | :--- |
+| H-01 | Aviso «agregado» efímero y poco perceptible | H1 | 3 | **P1** | C-01 | Luis Miranda |
+| H-02 | Búsqueda sin resultados no ofrece recuperación | H9 | 3 | **P1** | C-02 | Kevin Velasco |
+| H-03 | Salir de la confirmación borra el pedido sin aviso | H3 | 2 | P2 | C-03 | Luis Miranda |
+| H-04 | Motivo del bloqueo separado del botón | H5 | 2 | **P1** | C-04 | Manolo García |
+| H-05 | Código de retiro no copiable ni con instrucción | H10 | 2 | P2 | C-05 | Ariel Cholota |
+| H-06 | Contador del carrito sin unidad ni etiqueta | H1/H2 | 1 | P4 | C-06 | Ariel Cholota |
+| H-07 | Sin indicador de pasos del flujo | H1 | 1 | P4 | C-07 | Ariel Cholota |
+| H-08 | Tocar un ítem del pedido no abre el detalle | H4 | 2 | P3 | C-08 | Manolo García |
+| H-09 | Los usuarios buscan el total desde el menú | H6 | 1 | P4 | C-09 | Kevin Velasco |
+
+**Distribución:** 0 críticos · 2 mayores · 4 menores · 3 cosméticos.
+**Propuesta de mejora y criterio de cierre de cada hallazgo:** [`docs/matriz-consolidada.md`](docs/matriz-consolidada.md).
 
 ---
 
-## 8. Capturas de evidencia
+## 8. Triangulación metodológica (Fase 4.2)
 
-Guardar en `ape6/Fase3-4/imagenes/` con estos nombres:
+| Indicador | Resultado |
+| :--- | :---: |
+| Hallazgos totales | **9** |
+| Detectados por la heurística | 7 / 9 (77,8 %) |
+| Detectados por los usuarios | 5 / 9 (55,6 %) |
+| Detectados por ambos | 3 / 9 (33,3 %) |
 
-| Archivo | Qué capturar |
+| Origen | Hallazgos |
 | :--- | :--- |
-| `uta.png` · `fisei.png` | Logos institucionales (reutilizar) |
-| `v2-aviso-agregado.png` | Toast verde tras agregar un producto |
-| `v2-busqueda-tilde.png` | Búsqueda «cafe» (sin tilde) con el Café americano visible |
-| `v2-busqueda-vacia.png` | Filtro «Comida» + búsqueda «café» sin resultados |
-| `v2-pedido-quitar.png` | Botón «🗑 Quitar» dentro de Mi pedido |
-| `v2-confirmar-vacio.png` | Mi pedido vacío con «Confirmar pedido» deshabilitado y su motivo |
-| `v2-confirmacion.png` | Pantalla de confirmación con el código `#CU-104` |
-| `sesion-f3-p1.png` · `p2` · `p3` | Evidencias anonimizadas de las sesiones |
+| Ambos métodos | H-01, H-02, H-04 |
+| Solo heurística | H-03, H-05, H-06, H-07 |
+| Solo usuarios | H-08, H-09 |
+
+La heurística detecta riesgos latentes que el recorrido feliz no dispara; los usuarios revelan expectativas que la inspección no puede anticipar. Los tres hallazgos comunes son también los de mayor prioridad, lo que respalda la P1 sin depender de una sola fuente.
+
+Análisis completo y amenazas a la validez: [`docs/triangulacion.md`](docs/triangulacion.md).
 
 ---
 
-## 9. Estructura de la fase
+## 9. Criterios técnicos verificables (Fase 4.3)
+
+| ID | Criterio | Estándar de respaldo | Umbral |
+| :---: | :--- | :--- | :--- |
+| C-01 | El usuario percibe que el producto se agregó | ISO 9241-110 · WCAG 4.1.3, 1.4.3 | 3/3 sin mirar el contador · ≥ 5 s · contraste ≥ 4,5:1 |
+| C-02 | Entiende la causa del vacío y puede salir | ISO 9241-110 · WCAG 3.3.1, 3.3.3 | 3/3 recuperan en ≤ 10 s sin pista |
+| C-03 | Salir de la confirmación no destruye el pedido | ISO 9241-110 · WCAG 3.3.1 | 0 pérdidas silenciosas |
+| C-04 | Comprende por qué no puede confirmar | WCAG 3.3.1, 3.3.3, 1.4.1 | 3/3 en ≤ 5 s · motivo adyacente |
+| C-05 | Puede copiar el código y sabe para qué sirve | ISO 9241-110 · Nielsen H10 | Copia en 1 clic + instrucción |
+| C-06 | El contador comunica cantidad y unidad | WCAG 4.1.2 | Nombre accesible con unidad · 3/3 |
+| C-07 | Sabe en qué paso está | WCAG 2.4.8 · ISO 9241-110 | Indicador visible + `aria-current` |
+| C-08 | El ítem del pedido abre su detalle | ISO 9241-110 · WCAG 3.2.4 | 0 controles muertos |
+| C-09 | El total se ve sin abrir el pedido | ISO 9241-110 · Nielsen H6 | 3/3 lo leen desde el menú |
+
+Tabla completa con el método de verificación: [`docs/criterios-tecnicos.md`](docs/criterios-tecnicos.md).
+
+---
+
+## 10. Backlog priorizado (Fase 4.4)
+
+| Prioridad | Hallazgos | Esfuerzo | Iteración |
+| :---: | :--- | ---: | :---: |
+| **P1** | H-02, H-01, H-04 | 9 h | 1 |
+| **P2** | H-03, H-05 | 5 h | 2 |
+| **P3** | H-08 | 4 h | 2 |
+| **P4** | H-06, H-07, H-09 | 4 h | 3 |
+
+**Total:** 22 h. Cada Issue se cierra solo con el criterio cumplido, la regresión de las 9 tareas y la revisión de otro integrante.
+
+Detalle, reparto de carga, riesgos y definición de terminado: [`docs/backlog.md`](docs/backlog.md).
+
+---
+
+## 11. Conclusiones (Fase 4.5)
+
+**CaféU V2 es usable para completar el pedido y todavía no lo es para que el usuario entienda lo que ocurre mientras lo hace.**
+
+- **Eficacia:** 96,3 % de éxito autónomo, sin errores críticos.
+- **Eficiencia:** las 9 medianas bajo su meta; el mayor tiempo fue T8 (24 s en P2), asociado a H-02.
+- **Satisfacción:** SUS 86,7, por encima de la referencia de 68,0.
+- **Hallazgos:** 2 mayores, 4 menores y 3 cosméticos; ninguno impide completar una tarea.
+
+Los números altos y los problemas reales conviven: las tareas se completan y, al mismo tiempo, el usuario no siempre entiende el estado del sistema. Esa diferencia entre *poder hacer* y *saber qué está pasando* es la que guía el backlog de la V3.
+
+Texto completo con limitaciones y recomendaciones: [`docs/conclusiones.md`](docs/conclusiones.md).
+
+---
+
+## 12. GitHub: Issues, ramas y Pull Requests
+
+Los 9 Issues están redactados y listos para crear en [`github/`](github/README.md):
+
+| Archivo | Contenido |
+| :--- | :--- |
+| [`github/README.md`](github/README.md) | Índice, etiquetas, cómo crearlos, ramas, commits, plantilla de PR y matriz de revisión |
+| [`github/issues/H-01.md`](github/issues/H-01.md) … [`H-09.md`](github/issues/H-09.md) | Cuerpo completo de cada Issue (contexto, evidencia, propuesta, criterio de aceptación) |
+
+**Reparto:** Kevin (H-02, H-09) · Luis (H-01, H-03) · Manolo (H-04, H-08) · Ariel (H-05, H-06, H-07).
+
+> Los Issues y PRs los crea cada integrante desde su cuenta: el contenido está listo, pero la autoría y la revisión deben quedar registradas en GitHub. `gh` no está instalado en el entorno del equipo, así que la vía recomendada es la web.
+
+---
+
+# Anexos
+
+## 13. Capturas de evidencia
+
+Las seis capturas del prototipo ya están en [`imagenes/`](imagenes/):
+
+| Archivo | Contenido |
+| :--- | :--- |
+| `v2-aviso-agregado.png` | Toast verde tras agregar un producto |
+| `v2-busqueda-tilde.png` | «cafe» sin tilde con el Café americano visible |
+| `v2-busqueda-vacia.png` | Filtro «Comida» + «café» sin resultados |
+| `v2-pedido-quitar.png` | Botón «🗑 Quitar» dentro de Mi pedido |
+| `v2-confirmar-vacio.png` | Mi pedido vacío con «Confirmar» deshabilitado y su motivo |
+| `v2-confirmacion.png` | Pantalla de confirmación con `#CU-104` |
+
+Además: `uta.png` y `fisei.png` (logos, desde Overleaf) y `sesion-f3-p1/p2/p3.png` (evidencia de las sesiones).
+
+---
+
+## 14. Estructura de la entrega
 
 ```
 ape6/Fase3-4/
-├── README.md                  ← este documento
+├── README.md                     ← este documento
+├── main.tex                      ← informe UTA (fases 3 y 4)
+├── imagenes/                     ← capturas y logos
 ├── resultados/
-│   ├── heuristica-luis.md
-│   ├── heuristica-kevin.md
-│   ├── heuristica-manolo.md
-│   ├── heuristica-ariel.md
+│   ├── heuristica-luis.md · kevin · manolo · ariel
 │   ├── heuristica-consolidada.md
 │   ├── P1.md · P2.md · P3.md
 │   └── metricas-iso.md
-└── docs/
-    ├── ajustes-v2.md
-    └── protocolo-fase3.md
+├── docs/
+│   ├── ajustes-v2.md
+│   ├── protocolo-fase3.md
+│   ├── matriz-consolidada.md     ← Fase 4.1
+│   ├── triangulacion.md          ← Fase 4.2
+│   ├── criterios-tecnicos.md     ← Fase 4.3
+│   ├── backlog.md                ← Fase 4.4
+│   └── conclusiones.md           ← Fase 4.5
+└── github/
+    ├── README.md
+    └── issues/H-01.md … H-09.md
 ```
 
 ---
 
-## 10. Cómo reproducir la evaluación
+## 15. Cómo reproducir la evaluación
 
 1. Abrir `ape6/prototipo/index.html` en Chrome (modo móvil opcional).
 2. Ejecutar F5 y verificar el estado inicial.
@@ -196,35 +296,26 @@ ape6/Fase3-4/
 4. Registrar tiempos y errores en la hoja de observación.
 5. Aplicar el SUS al finalizar.
 6. Recalcular las métricas con las fórmulas de `resultados/metricas-iso.md`.
+7. Consolidar con la mediana y triangular con `docs/triangulacion.md`.
 
 ---
 
-## 11. Referencias
+## 16. Referencias
 
 - Boehm, B. (1984). *Software Engineering Economics*. Prentice Hall.
 - Brooke, J. (1996). *SUS: A quick and dirty usability scale*. En *Usability Evaluation in Industry*.
 - ISO. (2018). *ISO 9241-11:2018 — Ergonomics of human-system interaction. Part 11: Usability: Definitions and concepts*.
+- ISO. (2020). *ISO 9241-110:2020 — Ergonomics of human-system interaction. Part 110: Dialogue principles*.
 - Nielsen, J. (1994). *10 Usability Heuristics for User Interface Design*. Nielsen Norman Group.
 - Nielsen, J. (1995). *Severity Ratings for Usability Problems*. Nielsen Norman Group.
 - W3C. (2023). *Web Content Accessibility Guidelines (WCAG) 2.2*.
 
 ---
 
-## 12. Informe LaTeX
+## 17. Informe LaTeX
 
-El informe de la Fase 3 está en [`main.tex`](main.tex), con el mismo formato institucional UTA de la Fase 2. Para compilarlo:
+El informe está en [`main.tex`](main.tex), con el mismo formato institucional UTA de la Fase 2, e incluye las fases 3 y 4. Para compilarlo:
 
-1. Subir `main.tex` y la carpeta `imagenes/` a Overleaf.
-2. Agregar las capturas listadas en [`imagenes/README.md`](imagenes/README.md).
+1. Subir `main.tex` y la carpeta `imagenes/` a Overleaf (o hacer **Copy Project** del proyecto de la Fase 2, que ya tiene los logos).
+2. Verificar que estén las capturas listadas en [`imagenes/README.md`](imagenes/README.md).
 3. Compilar con pdfLaTeX.
-
----
-
-## 13. Pendiente para la Fase 4
-
-- Matriz consolidada definitiva (H-01…H-09) con propuesta de mejora.
-- Triangulación metodológica (ambos métodos / solo heurística / solo usuarios).
-- Criterios técnicos verificables (C-01…C-09) con estándar de respaldo.
-- Backlog priorizado (P1–P4) y GitHub Issues trazables.
-- `docs/conclusiones.md` con la respuesta a la pregunta del laboratorio.
-- Ampliar `main.tex` con la Fase 4 y generar el PDF final.

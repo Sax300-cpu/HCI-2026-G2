@@ -90,6 +90,6 @@ Abre `presentacion/index.html` en un navegador con conexión a internet para car
 | :--- | :--- | :--- |
 | Fase 1 | Planificación: plan, consentimiento, tareas y hoja de observación | [`ape6/Fase1/`](ape6/Fase1/) |
 | Fase 2 | Pilotaje: informe, prototipo funcional y entregables | [`ape6/Fase2/`](ape6/Fase2/) · [`ape6/Fase2-Pilotaje/`](ape6/Fase2-Pilotaje/) |
-| Fase 3 | Aplicación y análisis: ajustes V2, heurística con severidad, think-aloud y métricas ISO/SUS | [`ape6/Fase3-4/README.md`](ape6/Fase3-4/README.md) |
+| Fase 3 y 4 | Aplicación, análisis y cierre: ajustes V2, heurística con severidad, think-aloud, métricas ISO/SUS, matriz consolidada, triangulación, criterios técnicos y backlog | [`ape6/Fase3-4/README.md`](ape6/Fase3-4/README.md) |
 
 El prototipo evaluado se abre desde [`ape6/prototipo/index.html`](ape6/prototipo/index.html).
