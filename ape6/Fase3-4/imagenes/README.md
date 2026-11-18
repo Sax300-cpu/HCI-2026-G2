@@ -12,16 +12,20 @@ Coloca aquí los archivos con **exactamente estos nombres** para que
 
 ## Capturas del prototipo V2
 
-Abre `ape6/prototipo/index.html` en Chrome.
+Estas seis capturas **ya están generadas** (viewport móvil 390 × 844, Chrome).
 
-| Archivo | Cómo llegar / qué debe verse |
-| :--- | :--- |
-| `v2-aviso-agregado.png` | Agregar un producto y capturar el **aviso verde** («… agregado al pedido») |
-| `v2-busqueda-tilde.png` | Menú → buscar **`cafe`** (sin tilde) → se ve «Café americano» |
-| `v2-busqueda-vacia.png` | Filtro **Comida** + buscar **`café`** → «No hay productos que coincidan» |
-| `v2-pedido-quitar.png` | Mi pedido con un ítem → botón **«Quitar»** con papelera |
-| `v2-confirmar-vacio.png` | Mi pedido vacío → «Confirmar pedido» **deshabilitado** + motivo |
-| `v2-confirmacion.png` | Confirmar un pedido → código **`#CU-104`** |
+| Archivo | Estado | Qué muestra |
+| :--- | :---: | :--- |
+| `v2-aviso-agregado.png` | Listo | Aviso verde «Croissant agregado al pedido» tras agregar |
+| `v2-busqueda-tilde.png` | Listo | Menú con `cafe` (sin tilde) y «Café americano» visible |
+| `v2-busqueda-vacia.png` | Listo | Filtro **Comida** + `café` → «No hay productos que coincidan» |
+| `v2-pedido-quitar.png` | Listo | Mi pedido con un ítem y el botón **«Quitar»** con papelera |
+| `v2-confirmar-vacio.png` | Listo | Mi pedido vacío, «Confirmar pedido» deshabilitado y su motivo |
+| `v2-confirmacion.png` | Listo | Pantalla de confirmación con el código **`#CU-104`** |
+
+Para regenerarlas: abrir `ape6/prototipo/index.html` en Chrome, activar el modo
+dispositivo (`Ctrl + Shift + M`, iPhone 12 Pro) y repetir el recorrido descrito
+en la tabla.
 
 ## Evidencias de las sesiones (anonimizadas)
 
