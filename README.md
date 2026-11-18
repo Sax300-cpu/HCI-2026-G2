@@ -93,3 +93,8 @@ Abre `presentacion/index.html` en un navegador con conexión a internet para car
 | Fase 3 y 4 | Aplicación, análisis y cierre: ajustes V2, heurística con severidad, think-aloud, métricas ISO/SUS, matriz consolidada, triangulación, criterios técnicos y backlog | [`ape6/Fase3-4/README.md`](ape6/Fase3-4/README.md) |
 
 El prototipo evaluado se abre desde [`ape6/prototipo/index.html`](ape6/prototipo/index.html).
+
+Informes compilados:
+
+- Fase 2: [`ape6/IHC_APE6_FASE2.pdf`](ape6/IHC_APE6_FASE2.pdf)
+- Fases 3 y 4: [`ape6/IHC_APE6_FASE3-4.pdf`](ape6/IHC_APE6_FASE3-4.pdf)

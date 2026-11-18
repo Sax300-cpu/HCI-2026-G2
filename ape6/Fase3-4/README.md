@@ -314,7 +314,7 @@ ape6/Fase3-4/
 
 ## 17. Informe LaTeX
 
-El informe está en [`main.tex`](main.tex), con el mismo formato institucional UTA de la Fase 2, e incluye las fases 3 y 4. Para compilarlo:
+El informe está en [`main.tex`](main.tex), con el mismo formato institucional UTA de la Fase 2, e incluye las fases 3 y 4. La versión compilada está en [`ape6/IHC_APE6_FASE3-4.pdf`](../IHC_APE6_FASE3-4.pdf). Para recompilarlo:
 
 1. Subir `main.tex` y la carpeta `imagenes/` a Overleaf (o hacer **Copy Project** del proyecto de la Fase 2, que ya tiene los logos).
 2. Verificar que estén las capturas listadas en [`imagenes/README.md`](imagenes/README.md).
