@@ -39,6 +39,28 @@ const estado = $('#estado');
 // ---------- Utilidades ----------
 const fmt = (n) => '$' + n.toFixed(2);
 
+// Normaliza texto para búsquedas: minúsculas y sin tildes.
+// Así «cafe» encuentra «Café americano» y «te» encuentra «Té de manzanilla».
+const normalizar = (texto) =>
+  texto
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+
+let avisoTimer = null;
+
+// Aviso flotante accesible (role="status"). Permanece 5 s y no se borra al cambiar de vista.
+function mostrarAviso(mensaje) {
+  estado.textContent = mensaje;
+  estado.classList.add('visible');
+  if (avisoTimer) clearTimeout(avisoTimer);
+  avisoTimer = setTimeout(() => {
+    estado.classList.remove('visible');
+    estado.textContent = '';
+  }, 5000);
+}
+
 function totalArticulos() {
   let n = 0;
   for (const c of pedido.values()) n += c;
@@ -60,15 +82,16 @@ function mostrarVista(nombre) {
     if (activa) { vistas[key].hidden = false; } else { vistas[key].hidden = true; }
   }
   window.scrollTo(0, 0);
-  estado.textContent = '';
 }
 
 // ---------- Render: catálogo ----------
 function renderCatalogo() {
-  const q = buscador.value.trim().toLowerCase();
+  const q = normalizar(buscador.value);
   const lista = PRODUCTOS.filter((p) => {
     const okCat = categoriaActual === 'todas' || p.categoria === categoriaActual;
-    const okBus = !q || p.nombre.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
+    const okBus = !q ||
+      normalizar(p.nombre).includes(q) ||
+      normalizar(p.desc).includes(q);
     return okCat && okBus;
   });
 
@@ -120,8 +143,8 @@ function abrirDetalle(id) {
   $('#btn-agregar').addEventListener('click', () => {
     pedido.set(productoDetalle.id, (pedido.get(productoDetalle.id) || 0) + cant);
     actualizarContador();
-    estado.textContent = `${productoDetalle.nombre} agregado al pedido.`;
     mostrarVista('menu');
+    mostrarAviso(`${productoDetalle.nombre} agregado al pedido.`);
   });
 
   mostrarVista('detalle');
@@ -130,34 +153,36 @@ function abrirDetalle(id) {
 // ---------- Render: mi pedido ----------
 function renderPedido() {
   const cont = $('#pedido-contenido');
-  if (pedido.size === 0) {
-    cont.innerHTML =
+  const vacio = pedido.size === 0;
+  let html = '';
+
+  if (vacio) {
+    html +=
       `<div class="pedido-vacio">` +
         `<span class="emoji" aria-hidden="true">🛍️</span>` +
         `<p>Aún no agregas productos.</p>` +
         `<button type="button" class="boton primario" id="btn-vacio-menu">Volver al menú</button>` +
       `</div>`;
-    $('#btn-vacio-menu').addEventListener('click', () => mostrarVista('menu'));
-    return;
-  }
-
-  let html = '';
-  for (const [id, cant] of pedido) {
-    const p = PRODUCTOS.find((x) => x.id === id);
-    html +=
-      `<div class="linea-pedido">` +
-        `<div class="info">` +
-          `<span class="nombre">${p.emoji} ${p.nombre}</span><br>` +
-          `<span class="precio-unit">${fmt(p.precio)} c/u</span>` +
-        `</div>` +
-        `<div class="mini-selector">` +
-          `<button type="button" data-id="${id}" data-op="-1" aria-label="Disminuir ${p.nombre}">−</button>` +
-          `<span>${cant}</span>` +
-          `<button type="button" data-id="${id}" data-op="1" aria-label="Aumentar ${p.nombre}">+</button>` +
-        `</div>` +
-        `<span class="subtotal">${fmt(p.precio * cant)}</span>` +
-        `<button type="button" class="quitar" data-id="${id}" aria-label="Quitar ${p.nombre}">✕</button>` +
-      `</div>`;
+  } else {
+    for (const [id, cant] of pedido) {
+      const p = PRODUCTOS.find((x) => x.id === id);
+      html +=
+        `<div class="linea-pedido">` +
+          `<div class="info">` +
+            `<span class="nombre">${p.emoji} ${p.nombre}</span><br>` +
+            `<span class="precio-unit">${fmt(p.precio)} c/u</span>` +
+          `</div>` +
+          `<div class="mini-selector">` +
+            `<button type="button" data-id="${id}" data-op="-1" aria-label="Disminuir ${p.nombre}">−</button>` +
+            `<span>${cant}</span>` +
+            `<button type="button" data-id="${id}" data-op="1" aria-label="Aumentar ${p.nombre}">+</button>` +
+          `</div>` +
+          `<span class="subtotal">${fmt(p.precio * cant)}</span>` +
+          `<button type="button" class="quitar" data-id="${id}" aria-label="Quitar ${p.nombre} de mi pedido">` +
+            `<span aria-hidden="true">🗑</span> Quitar` +
+          `</button>` +
+        `</div>`;
+    }
   }
 
   html +=
@@ -166,36 +191,51 @@ function renderPedido() {
       `<div class="fila total"><dt>Total a pagar</dt><dd>${fmt(subtotal())}</dd></div>` +
     `</dl>` +
     `<div class="acciones">` +
-      `<button type="button" class="boton primario" id="btn-confirmar">Confirmar pedido</button>` +
+      `<button type="button" class="boton primario" id="btn-confirmar"` +
+        (vacio ? ` disabled aria-describedby="motivo-confirmar"` : ``) +
+      `>Confirmar pedido</button>` +
+      (vacio
+        ? `<p class="motivo" id="motivo-confirmar">Agrega al menos un producto para confirmar tu pedido.</p>`
+        : ``) +
       `<button type="button" class="boton secundario" id="btn-seguir">Seguir comprando</button>` +
     `</div>`;
 
   cont.innerHTML = html;
 
-  // Eventos de cantidad / quitar
-  cont.querySelectorAll('.mini-selector button').forEach((b) => {
-    b.addEventListener('click', () => {
-      const id = b.dataset.id;
-      const delta = parseInt(b.dataset.op, 10);
-      const nueva = (pedido.get(id) || 0) + delta;
-      if (nueva <= 0) pedido.delete(id); else pedido.set(id, nueva);
-      actualizarContador();
-      renderPedido();
+  if (vacio) {
+    $('#btn-vacio-menu').addEventListener('click', () => mostrarVista('menu'));
+  } else {
+    // Eventos de cantidad / quitar
+    cont.querySelectorAll('.mini-selector button').forEach((b) => {
+      b.addEventListener('click', () => {
+        const id = b.dataset.id;
+        const delta = parseInt(b.dataset.op, 10);
+        const nueva = (pedido.get(id) || 0) + delta;
+        if (nueva <= 0) pedido.delete(id); else pedido.set(id, nueva);
+        actualizarContador();
+        renderPedido();
+      });
     });
-  });
-  cont.querySelectorAll('.quitar').forEach((b) => {
-    b.addEventListener('click', () => {
-      pedido.delete(b.dataset.id);
-      actualizarContador();
-      renderPedido();
+    cont.querySelectorAll('.quitar').forEach((b) => {
+      b.addEventListener('click', () => {
+        pedido.delete(b.dataset.id);
+        actualizarContador();
+        renderPedido();
+      });
     });
-  });
+    $('#btn-confirmar').addEventListener('click', confirmarPedido);
+  }
 
-  $('#btn-confirmar').addEventListener('click', confirmarPedido);
   $('#btn-seguir').addEventListener('click', () => mostrarVista('menu'));
 }
 
 function confirmarPedido() {
+  // Defensa adicional: nunca confirmar un pedido vacío, aunque se invoque por código.
+  if (pedido.size === 0) {
+    mostrarAviso('Agrega al menos un producto antes de confirmar tu pedido.');
+    return;
+  }
+
   const cont = $('#confirmacion-contenido');
   let items = '';
   for (const [id, cant] of pedido) {
@@ -219,7 +259,6 @@ function confirmarPedido() {
     mostrarVista('menu');
   });
 
-  estado.textContent = '';
   mostrarVista('confirmacion');
 }
 

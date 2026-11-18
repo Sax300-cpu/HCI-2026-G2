@@ -81,3 +81,15 @@ Los wireframes permiten hacer visibles las ideas de una interfaz y conversar sob
 ## Uso de la presentación
 
 Abre `presentacion/index.html` en un navegador con conexión a internet para cargar Reveal.js desde CDN. Usa las flechas del teclado o los controles en pantalla para avanzar y retroceder. También puedes abrirla en modo pantalla completa con `F`.
+
+---
+
+## APE 6 — Evaluación y validación de CaféU
+
+| Fase | Contenido | Enlace |
+| :--- | :--- | :--- |
+| Fase 1 | Planificación: plan, consentimiento, tareas y hoja de observación | [`ape6/Fase1/`](ape6/Fase1/) |
+| Fase 2 | Pilotaje: informe, prototipo funcional y entregables | [`ape6/Fase2/`](ape6/Fase2/) · [`ape6/Fase2-Pilotaje/`](ape6/Fase2-Pilotaje/) |
+| Fase 3 | Aplicación y análisis: ajustes V2, heurística con severidad, think-aloud y métricas ISO/SUS | [`ape6/Fase3-4/README.md`](ape6/Fase3-4/README.md) |
+
+El prototipo evaluado se abre desde [`ape6/prototipo/index.html`](ape6/prototipo/index.html).
